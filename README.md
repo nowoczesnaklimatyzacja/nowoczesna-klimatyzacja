@@ -1,6 +1,6 @@
-# FREE HOME Design - portfolio studia
+# FREE HOME design Studio - portfolio studia
 
-Responsywna strona portfolio i oferty studia FREE HOME Design.
+Responsywna strona portfolio i oferty studia FREE HOME design Studio.
 
 ## Uruchomienie
 
