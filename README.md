@@ -18,9 +18,9 @@ Strona nie wymaga instalowania zależności ani procesu budowania.
 
 ## Publikacja
 
-Repozytorium jest przygotowane pod GitHub Pages. W ustawieniach repozytorium
-wybierz `Settings` -> `Pages` -> `Deploy from a branch`, a potem gałąź `main`
-i katalog `/root`.
+Repozytorium jest przygotowane pod GitHub Pages. Po pushu na gałąź `main`
+workflow `.github/workflows/pages.yml` publikuje statyczną stronę z katalogu
+głównego.
 
 ## Pliki
 
