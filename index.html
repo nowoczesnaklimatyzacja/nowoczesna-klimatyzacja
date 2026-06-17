@@ -1,919 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FREE HOME DESIGN STUDIO | Prosta strona WWW do 60h</title>
-    <meta
-      name="description"
-      content="Proste strony one page dla małych firm. Pierwsza wersja do 48 godzin, finalizacja do 60 godzin. Strona WWW lub kompletny pakiet Firma 360."
-    />
-    <meta
-      name="keywords"
-      content="strony internetowe dla firm, projekt logo, wizytówka Google, branding firmy, grafiki reklamowe, wizytówki, oklejanie samochodów, FREE HOME design Studio"
-    />
-    <meta name="author" content="FREE HOME design Studio" />
-    <meta name="theme-color" content="#11110f" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pl_PL" />
-    <meta property="og:title" content="FREE HOME DESIGN STUDIO | Twoja firma dobrze ubrana" />
-    <meta
-      property="og:description"
-      content="Jedno miejsce. Jedna spójna marka. Od logo i strony WWW po Google, druk i reklamę."
-    />
-    <meta property="og:url" content="https://nowoczesnaklimatyzacja.com.pl" />
-
-    <link rel="icon" href="assets/free-home-design-icon.svg" />
-    <link rel="canonical" href="https://nowoczesnaklimatyzacja.com.pl" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "FREE HOME DESIGN STUDIO",
-        "description": "Proste strony one page i praktyczny wizerunek dla małych firm. Pierwsza wersja do 48 godzin, finalizacja do 60 godzin.",
-        "url": "https://nowoczesnaklimatyzacja.com.pl",
-        "telephone": "+48537264666",
-        "email": "kontakt@freehome.com.pl",
-        "areaServed": "Polska",
-        "founder": {
-          "@type": "Person",
-          "name": "Grzegorz Łukasik"
-        }
-      }
-    </script>
-  </head>
-
-  <body>
-    <a class="skip-link" href="#main">Przejdź do treści</a>
-
-    <header class="site-header" data-header>
-      <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="FREE HOME DESIGN STUDIO - strona główna">
-          <img
-            class="brand-logo brand-logo-full"
-            src="assets/free-home-design-logo.svg"
-            alt=""
-            width="230"
-            height="46"
-          />
-          <img
-            class="brand-logo brand-logo-icon"
-            src="assets/free-home-design-icon.svg"
-            alt=""
-            width="48"
-            height="42"
-          />
-        </a>
-
-        <nav class="desktop-nav" aria-label="Główna nawigacja">
-          <a href="#oferta">Oferta</a>
-          <a href="#realizacje">Realizacje</a>
-          <a href="#proces">Proces</a>
-          <a href="#cennik">Cennik</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
-
-        <div class="header-actions">
-          <a class="header-contact" href="tel:+48537264666">
-            <span class="availability-dot" aria-hidden="true"></span>
-            +48 537 264 666
-          </a>
-          <a class="button button-small button-accent" href="#kontakt">
-            Porozmawiajmy
-            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-          </a>
-          <button
-            class="menu-button"
-            type="button"
-            aria-label="Otwórz menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-            data-menu-button
-          >
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <div class="menu-overlay" data-menu-overlay></div>
-    <aside class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
-      <div class="mobile-menu-top">
-        <img src="assets/free-home-design-logo.svg" alt="FREE HOME DESIGN STUDIO" width="205" height="41" />
-        <button type="button" aria-label="Zamknij menu" data-menu-close>
-          <i data-lucide="x" aria-hidden="true"></i>
-        </button>
-      </div>
-      <nav aria-label="Nawigacja mobilna">
-        <a href="#oferta"><span>Oferta</span><strong>01</strong></a>
-        <a href="#realizacje"><span>Realizacje</span><strong>02</strong></a>
-        <a href="#proces"><span>Proces</span><strong>03</strong></a>
-        <a href="#cennik"><span>Cennik</span><strong>04</strong></a>
-        <a href="#kontakt"><span>Kontakt</span><strong>05</strong></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nowoczesna Klimatyzacja — Tomasz Chrośniak</title>
+  <meta name="description" content="Nowoczesna Klimatyzacja — montaż, serwis i domowe systemy klimatyzacji. Tomasz Chrośniak, tel. 606 713 838." />
+  <style>
+    :root{
+      --navy:#123d78;
+      --blue:#0f8ed8;
+      --light:#e9f7ff;
+      --ice:#f7fcff;
+      --white:#ffffff;
+      --text:#10213a;
+      --muted:#5f7087;
+      --shadow:0 24px 70px rgba(10, 55, 110, .18);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f6fbff 0%,#ffffff 42%,#eef8ff 100%);
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1160px,92%);margin:0 auto}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.86);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(18,61,120,.08);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{font-weight:900;letter-spacing:1px;color:var(--navy);font-size:22px;line-height:1}
+    .logo span{display:block;color:var(--blue);font-weight:800;font-size:13px;letter-spacing:7px;margin-top:6px}
+    .navlinks{display:flex;gap:24px;color:#31506f;font-size:15px}
+    .phone{
+      background:linear-gradient(135deg,var(--blue),var(--navy));
+      color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;
+      box-shadow:0 10px 26px rgba(15,142,216,.25);
+    }
+    .hero{padding:70px 0 54px;position:relative;overflow:hidden}
+    .hero:before{
+      content:"";position:absolute;right:-180px;top:-140px;width:620px;height:620px;
+      background:radial-gradient(circle,rgba(15,142,216,.20),rgba(15,142,216,0) 64%);
+      pointer-events:none;
+    }
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .badge{display:inline-flex;gap:10px;align-items:center;background:#fff;border:1px solid rgba(15,142,216,.18);padding:9px 14px;border-radius:999px;color:var(--navy);font-weight:800;font-size:14px}
+    h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:22px 0 20px;color:var(--navy);letter-spacing:-2px}
+    h1 strong{color:var(--blue)}
+    .lead{font-size:20px;color:#3d526c;max-width:640px;margin-bottom:30px}
+    .cta{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:15px 22px;border-radius:999px;font-weight:900;border:2px solid transparent;
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;box-shadow:var(--shadow)}
+    .btn.secondary{background:#fff;border-color:rgba(18,61,120,.15);color:var(--navy)}
+    .hero-card{position:relative}
+    .hero-card img{width:100%;border-radius:30px;box-shadow:var(--shadow);display:block}
+    .floating{
+      position:absolute;left:-24px;bottom:24px;background:#fff;border-radius:22px;padding:18px 20px;
+      box-shadow:0 20px 50px rgba(18,61,120,.18);font-weight:900;color:var(--navy)
+    }
+    section{padding:62px 0}
+    .title{text-align:center;margin-bottom:34px}
+    .title h2{font-size:clamp(30px,4vw,48px);color:var(--navy);margin:0 0 10px}
+    .title p{color:var(--muted);margin:0 auto;max-width:760px;font-size:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{
+      background:#fff;border:1px solid rgba(18,61,120,.08);border-radius:var(--radius);
+      padding:28px;box-shadow:0 16px 44px rgba(18,61,120,.08)
+    }
+    .icon{
+      width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#dff5ff,#b9e9ff);
+      display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px
+    }
+    .card h3{margin:0 0 10px;color:var(--navy);font-size:23px}
+    .card p{margin:0;color:var(--muted)}
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+    .split img{width:100%;border-radius:28px;box-shadow:var(--shadow)}
+    .list{display:grid;gap:14px;margin-top:22px}
+    .li{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:15px 16px;border:1px solid rgba(15,142,216,.12)}
+    .check{color:#0f8ed8;font-weight:900}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:22px;box-shadow:0 14px 36px rgba(18,61,120,.12)}
+    .contact{
+      background:linear-gradient(135deg,var(--navy),#07214a);
+      color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+      position:relative;overflow:hidden;
+    }
+    .contact:after{content:"";position:absolute;right:-90px;bottom:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(80,199,255,.32),transparent 62%)}
+    .contact h2{font-size:42px;line-height:1.05;margin:0 0 12px;position:relative;z-index:1}
+    .contact p{color:#d8efff;margin:0;max-width:650px;position:relative;z-index:1}
+    .contact .phone{position:relative;z-index:1;background:#fff;color:var(--navy)}
+    footer{padding:28px 0;color:#6b7e92;text-align:center}
+    @media(max-width:860px){
+      .grid,.split,.contact{grid-template-columns:1fr}
+      .cards,.gallery{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .floating{position:static;margin-top:14px}
+      .contact{padding:32px 24px}
+      .contact h2{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#">NOWOCZESNA<span>KLIMATYZACJA</span></a>
+      <nav class="navlinks">
+        <a href="#uslugi">Usługi</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
-      <div class="mobile-menu-footer">
-        <p>Masz firmę? Zbudujmy jej dobry wizerunek.</p>
-        <a class="button button-accent" href="https://wa.me/48537264666" target="_blank" rel="noopener">
-          Napisz na WhatsApp
-          <i data-lucide="message-circle" aria-hidden="true"></i>
-        </a>
-      </div>
-    </aside>
-
-    <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-noise" aria-hidden="true"></div>
-        <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-        <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
-
-        <div class="container hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow eyebrow-light reveal">
-              <span>Szybkie studio dla małych firm</span>
-              <strong>Głogów / cała Polska</strong>
-            </p>
-            <h1 class="reveal">
-              Twoja firma.<br />
-              <span class="hero-outline">Dobrze ubrana.</span><br />
-              Gotowa do działania.
-            </h1>
-            <p class="hero-lead reveal">
-              Prosta strona one page i najważniejsze materiały, dzięki którym mała
-              firma szybko zaczyna wyglądać profesjonalnie i być widoczna w sieci.
-              Pierwsza gotowa wersja już do 48 godzin.
-            </p>
-            <div class="hero-actions reveal">
-              <a class="button button-accent button-large" href="#kontakt">
-                Zbudujmy Twoją markę
-                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-              </a>
-              <a class="button button-ghost button-large" href="#cennik">
-                Zobacz ofertę
-                <i data-lucide="arrow-down" aria-hidden="true"></i>
-              </a>
-            </div>
-            <div class="hero-note reveal">
-              <span class="availability-dot" aria-hidden="true"></span>
-              Pierwsza wersja do 48h
-              <span class="hero-note-divider"></span>
-              Całość do 60h od ustalenia szczegółów
-              <span class="hero-note-divider"></span>
-              Strona WWW 2 990 zł
-            </div>
-          </div>
-
-          <div class="hero-stage reveal reveal-delay" aria-label="Przykładowe elementy marki">
-            <div class="stage-browser">
-              <div class="browser-bar">
-                <span class="browser-dots"><i></i><i></i><i></i></span>
-                <span class="browser-address">twojafirma.pl</span>
-                <i data-lucide="more-horizontal" aria-hidden="true"></i>
-              </div>
-              <div class="browser-page">
-                <div class="browser-nav">
-                  <span class="mini-logo">FIRMA<span>+</span></span>
-                  <span class="mini-links">Oferta&nbsp;&nbsp; Realizacje&nbsp;&nbsp; Kontakt</span>
-                </div>
-                <div class="browser-hero">
-                  <span class="browser-tag">JAKOŚĆ / TERMIN / EFEKT</span>
-                  <strong>Robimy dobrą<br />robotę.</strong>
-                  <span class="browser-cta">Sprawdź ofertę <b>↗</b></span>
-                </div>
-                <div class="browser-metrics">
-                  <span><b>48h</b> pierwsza wersja</span>
-                  <span><b>1</b> czytelna strona</span>
-                  <span><b>60h</b> gotowy projekt</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="stage-card stage-card-google">
-              <span class="stage-card-icon"><i data-lucide="map-pin" aria-hidden="true"></i></span>
-              <div>
-                <small>Profil Firmy w Google</small>
-                <strong>Widoczny. Uzupełniony. Gotowy.</strong>
-              </div>
-              <span class="google-rating">5.0 ★★★★★</span>
-            </div>
-
-            <div class="stage-card stage-card-print">
-              <span class="print-mark">FH<span>/</span>D</span>
-              <div>
-                <small>Wizytówka / druk</small>
-                <strong>GRZEGORZ<br />ŁUKASIK</strong>
-              </div>
-            </div>
-
-            <div class="stage-sticker">
-              <span>MARKA</span>
-              <strong>360°</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-index" aria-hidden="true">
-          <span>STRONY WWW</span>
-          <span>BRANDING</span>
-          <span>GOOGLE</span>
-          <span>DRUK</span>
-          <span>REKLAMA</span>
-        </div>
-      </section>
-
-      <section class="ticker" aria-label="Zakres usług">
-        <div class="ticker-track">
-          <span>LOGO</span><i>✦</i>
-          <span>STRONA WWW</span><i>✦</i>
-          <span>WIZYTÓWKA GOOGLE</span><i>✦</i>
-          <span>SOCIAL MEDIA</span><i>✦</i>
-          <span>WIZYTÓWKI</span><i>✦</i>
-          <span>BANERY</span><i>✦</i>
-          <span>OKLEJANIE AUT</span><i>✦</i>
-          <span>LOGO</span><i>✦</i>
-          <span>STRONA WWW</span><i>✦</i>
-          <span>WIZYTÓWKA GOOGLE</span><i>✦</i>
-          <span>SOCIAL MEDIA</span><i>✦</i>
-          <span>WIZYTÓWKI</span><i>✦</i>
-          <span>BANERY</span><i>✦</i>
-          <span>OKLEJANIE AUT</span><i>✦</i>
-        </div>
-      </section>
-
-      <section class="section intro-section">
-        <div class="container intro-grid">
-          <p class="section-number reveal">01 / PO CO TO WSZYSTKO?</p>
-          <div class="intro-copy reveal">
-            <h2>
-              Prosto. Szybko.<br />
-              <span>Bez zbędnego komplikowania.</span>
-            </h2>
-            <p>
-              Nie budujemy rozbudowanych portali, sklepów ani systemów. Tworzymy
-              proste strony one page dla małych i lokalnych firm, które chcą być
-              widoczne w internecie, dobrze wyglądać i ułatwić klientowi kontakt.
-            </p>
-          </div>
-          <div class="intro-badge reveal">
-            <span>OD USTALEŃ</span>
-            <i data-lucide="arrow-down-right" aria-hidden="true"></i>
-            <strong>48H WERSJA<br />60H GOTOWE</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services-section" id="oferta">
-        <div class="container">
-          <div class="section-heading reveal">
-            <div>
-              <p class="section-label">02 / OFERTA</p>
-              <h2>Mała firma.<br /><span>Szybki start w sieci.</span></h2>
-            </div>
-            <p class="section-heading-copy">
-              Bez podstron, paneli i niepotrzebnych funkcji. Dostajesz prostą,
-              czytelną stronę oraz materiały, które pomagają klientowi znaleźć
-              firmę, zrozumieć ofertę i szybko się skontaktować.
-            </p>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card service-card-featured reveal">
-              <div class="service-top">
-                <span class="service-index">01</span>
-                <span class="service-icon"><i data-lucide="monitor-smartphone" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-visual website-visual" aria-hidden="true">
-                <div class="website-frame">
-                  <span class="website-frame-bar"></span>
-                  <strong>TWÓJ<br />BIZNES.</strong>
-                  <i>ONLINE ↗</i>
-                </div>
-                <span class="code-chip">&lt;/&gt;</span>
-              </div>
-              <div class="service-copy">
-                <h3>Strona internetowa</h3>
-                <p>
-                  Nowoczesna strona typu one page, która jasno pokazuje ofertę i
-                  prowadzi klienta prosto do kontaktu.
-                </p>
-                <ul>
-                  <li>projekt i wdrożenie</li>
-                  <li>wersja mobilna</li>
-                  <li>teksty i kontakt</li>
-                  <li>SEO lokalne</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <div class="service-top">
-                <span class="service-index">02</span>
-                <span class="service-icon"><i data-lucide="map-pinned" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-copy">
-                <h3>Google i firmowy mail</h3>
-                <p>
-                  Zakładam lub porządkuję wizytówkę Google, aby klient mógł znaleźć
-                  firmę, zadzwonić i sprawdzić jej ofertę.
-                </p>
-                <ul>
-                  <li>profil firmy Google</li>
-                  <li>optymalizacja lokalna</li>
-                  <li>firmowy adres e-mail</li>
-                </ul>
-              </div>
-              <div class="map-pin-visual map-pin-visual-light" aria-hidden="true">
-                <span><i data-lucide="map-pin"></i></span>
-                <i class="map-line map-line-one"></i>
-                <i class="map-line map-line-two"></i>
-                <i class="map-line map-line-three"></i>
-              </div>
-            </article>
-
-            <article class="service-card service-card-dark reveal">
-              <div class="service-top">
-                <span class="service-index">03</span>
-                <span class="service-icon"><i data-lucide="contact" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-copy">
-                <h3>Wizytówki 500 sztuk</h3>
-                <p>
-                  Projektuję wizytówkę, przygotowuję pliki do druku i zamawiam
-                  pierwsze 500 sztuk dla Twojej firmy.
-                </p>
-                <ul>
-                  <li>projekt dwustronny</li>
-                  <li>plik produkcyjny</li>
-                  <li>500 sztuk w cenie 360</li>
-                </ul>
-              </div>
-              <div class="print-stack" aria-hidden="true">
-                <span>FREE<br />HOME</span>
-                <span>DESIGN<br />STUDIO</span>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <div class="service-top">
-                <span class="service-index">04</span>
-                <span class="service-icon"><i data-lucide="megaphone" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-copy">
-                <h3>Facebook i grafiki</h3>
-                <p>
-                  Podstawowy komplet, dzięki któremu profile firmy wyglądają
-                  spójnie ze stroną i pozostałymi materiałami.
-                </p>
-                <ul>
-                  <li>grafika profilowa</li>
-                  <li>tło na Facebooka</li>
-                  <li>pliki online</li>
-                </ul>
-              </div>
-              <div class="social-stack" aria-hidden="true">
-                <span>POST</span><span>AD</span><span>STORY</span>
-              </div>
-            </article>
-
-            <article class="service-card reveal">
-              <div class="service-top">
-                <span class="service-index">05</span>
-                <span class="service-icon"><i data-lucide="printer" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-copy">
-                <h3>Baner, ulotka lub plakat</h3>
-                <p>
-                  Czytelny projekt reklamowy w potrzebnym formacie, przygotowany
-                  jako gotowy plik do wysłania do drukarni.
-                </p>
-                <ul>
-                  <li>dowolny format baneru</li>
-                  <li>ulotka albo plakat</li>
-                  <li>QR kod i pliki do druku</li>
-                </ul>
-              </div>
-              <div class="identity-shapes" aria-hidden="true">
-                <span>B</span><span>U</span><span>P</span>
-              </div>
-            </article>
-
-            <article class="service-card service-card-accent reveal">
-              <div class="service-top">
-                <span class="service-index">06</span>
-                <span class="service-icon"><i data-lucide="car-front" aria-hidden="true"></i></span>
-              </div>
-              <div class="service-copy">
-                <h3>Oklejenie samochodu</h3>
-                <p>
-                  Pomysł i wizualizacja reklamy na samochodzie firmowym, spójna ze
-                  stroną, Google i materiałami reklamowymi.
-                </p>
-                <ul>
-                  <li>koncepcja boków i tyłu</li>
-                  <li>dane kontaktowe i oferta</li>
-                  <li>wizualizacja dla wykonawcy</li>
-                </ul>
-              </div>
-              <div class="car-visual" aria-hidden="true">
-                <i data-lucide="car"></i>
-                <span>FREE HOME / DESIGN</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section work-section" id="realizacje">
-        <div class="container">
-          <div class="section-heading section-heading-light reveal">
-            <div>
-              <p class="section-label">03 / PORTFOLIO NA ŻYCZENIE</p>
-              <h2>Chcesz zobaczyć więcej?<br /><span>Poproś o portfolio PDF.</span></h2>
-            </div>
-            <p class="section-heading-copy">
-              Nie pokazuję wszystkiego publicznie. Jeśli chcesz, podeślę pełne
-              portfolio z przykładami stron, wizytówek, banerów i materiałów do druku.
-            </p>
-          </div>
-          <div class="portfolio-library reveal">
-            <div>
-              <p class="section-label">PEŁNE PORTFOLIO / PDF</p>
-              <h3>Strony to dopiero początek.</h3>
-              <p>
-                Wizytówki, banery, grafiki reklamowe, materiały do druku i
-                wizualizacje oklejenia samochodów pokażę w osobnym katalogu.
-              </p>
-            </div>
-            <div class="portfolio-library-tags" aria-label="Zakres pełnego portfolio">
-              <span>WIZYTÓWKI</span>
-              <span>BANERY</span>
-              <span>ULOTKI</span>
-              <span>GRAFIKI</span>
-              <span>OKLEJENIA</span>
-            </div>
-            <a
-              class="button button-accent button-large"
-              href="mailto:kontakt@freehome.com.pl?subject=Pro%C5%9Bba%20o%20pe%C5%82ne%20portfolio%20FREE%20HOME%20DESIGN%20STUDIO"
-            >
-              Poproś o portfolio PDF
-              <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section packages-section" id="cennik">
-        <div class="container">
-          <div class="section-heading reveal">
-            <div>
-              <p class="section-label">04 / CENNIK</p>
-              <h2>Dwie proste opcje.<br /><span>Bez ukrywania ceny.</span></h2>
-            </div>
-            <p class="section-heading-copy">
-              Potrzebujesz tylko strony? Wybierz stronę WWW. Chcesz uporządkować
-              całą firmę online i offline? Pakiet FIRMA 360 jest dla Ciebie.
-            </p>
-          </div>
-
-          <div class="package-grid pricing-grid">
-            <article class="package-card reveal">
-              <div class="package-top">
-                <span>01</span>
-                <p>TYLKO STRONA INTERNETOWA</p>
-              </div>
-              <div class="package-title-row">
-                <h3>STRONA WWW</h3>
-                <strong class="package-price">2 990 <small>zł</small></strong>
-              </div>
-              <p class="package-for">
-                Dla małych firm, które potrzebują prostej i czytelnej strony
-                one page, gotowej do pokazania klientom bez długiego czekania.
-              </p>
-              <div class="package-time">
-                <span><strong>48h</strong> pierwsza wersja</span>
-                <span><strong>60h</strong> gotowa strona</span>
-              </div>
-              <ul class="package-scope">
-                <li><i data-lucide="check"></i> nowoczesna strona typu one page dla firmy</li>
-                <li><i data-lucide="check"></i> układ dopasowany do usług i branży</li>
-                <li><i data-lucide="check"></i> wersja mobilna</li>
-                <li><i data-lucide="check"></i> podstawowe teksty na stronę</li>
-                <li><i data-lucide="check"></i> przyciski kontaktu</li>
-                <li><i data-lucide="check"></i> formularz kontaktowy</li>
-                <li><i data-lucide="check"></i> podstawowe SEO lokalne</li>
-                <li><i data-lucide="check"></i> podpięcie domeny</li>
-                <li><i data-lucide="check"></i> przygotowanie do indeksacji Google</li>
-                <li><i data-lucide="check"></i> 1 runda poprawek</li>
-              </ul>
-              <a href="#kontakt">Chcę stronę WWW <i data-lucide="arrow-right"></i></a>
-            </article>
-
-            <article class="package-card package-card-featured reveal">
-              <span class="package-recommended">NAJLEPSZY START DLA FIRMY</span>
-              <div class="package-top">
-                <span>02</span>
-                <p>KOMPLETNY WIZERUNEK FIRMY</p>
-              </div>
-              <div class="package-title-row">
-                <h3>FIRMA 360</h3>
-                <strong class="package-price">5 990 <small>zł</small></strong>
-              </div>
-              <p class="package-for">
-                Szybki pakiet dla małej firmy, która chce pojawić się w internecie,
-                Google i podstawowych materiałach reklamowych.
-              </p>
-              <div class="package-time package-time-dark">
-                <span><strong>48h</strong> pierwsza wersja</span>
-                <span><strong>60h</strong> gotowy pakiet</span>
-              </div>
-              <ul class="package-scope package-scope-wide">
-                <li><i data-lucide="check"></i> strona internetowa typu one page</li>
-                <li><i data-lucide="check"></i> podstawowe teksty sprzedażowe</li>
-                <li><i data-lucide="check"></i> podstawowe SEO lokalne</li>
-                <li><i data-lucide="check"></i> założenie lub optymalizacja wizytówki Google</li>
-                <li><i data-lucide="check"></i> optymalizacja Google pod wybrane słowo kluczowe</li>
-                <li><i data-lucide="check"></i> konfiguracja firmowego maila, jeśli jest potrzebny</li>
-                <li><i data-lucide="check"></i> uporządkowanie identyfikacji wizualnej</li>
-                <li><i data-lucide="check"></i> projekt wizytówki</li>
-                <li><i data-lucide="check"></i> zamówienie 500 sztuk wizytówek</li>
-                <li><i data-lucide="check"></i> grafika profilowa i tło na Facebooka</li>
-                <li><i data-lucide="check"></i> projekt baneru w dowolnym formacie</li>
-                <li><i data-lucide="check"></i> projekt ulotki lub plakatu</li>
-                <li><i data-lucide="check"></i> QR kod do strony, kontaktu albo opinii Google</li>
-                <li><i data-lucide="check"></i> pomysł i wizualizacja oklejenia samochodu</li>
-                <li><i data-lucide="check"></i> podstawowe pliki online i do druku</li>
-                <li><i data-lucide="check"></i> 2 rundy poprawek</li>
-              </ul>
-              <div class="package-flex-note">
-                <i data-lucide="sliders-horizontal" aria-hidden="true"></i>
-                <p>
-                  Jeżeli firma nie potrzebuje któregoś elementu, po prostu go
-                  pomijamy i skupiamy się na tym, co realnie pomoże w sprzedaży,
-                  widoczności i profesjonalnym odbiorze marki.
-                </p>
-              </div>
-              <a href="#kontakt">Chcę pakiet 360 <i data-lucide="arrow-right"></i></a>
-            </article>
-          </div>
-
-          <aside class="pricing-disclaimer reveal" aria-labelledby="pricing-note-title">
-            <span class="pricing-note-icon"><i data-lucide="info" aria-hidden="true"></i></span>
-            <div>
-              <h3 id="pricing-note-title">Co warto wiedzieć</h3>
-              <p>
-                Ceny są cenami końcowymi. Domena, hosting, płatne narzędzia,
-                większy druk materiałów reklamowych oraz produkcja i montaż
-                oklejenia samochodu są rozliczane osobno. W pakiecie FIRMA 360 w
-                cenie znajduje się projekt i zamówienie 500 sztuk wizytówek.
-                Banery, ulotki, plakaty i oklejenie auta obejmują projekt,
-                koncepcję lub wizualizację, ale nie obejmują kosztu produkcji,
-                druku ani montażu. Termin 48/60 godzin liczymy od zatwierdzenia
-                zakresu i otrzymania kompletu informacji oraz materiałów. Wymaga
-                on sprawnej akceptacji po stronie klienta i nie obejmuje czasu
-                produkcji ani dostawy zewnętrznej drukarni.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section audience-section" id="dla-kogo">
-        <div class="container audience-layout">
-          <div class="audience-copy reveal">
-            <p class="section-label">05 / DLA KOGO</p>
-            <h2>Dla firm, które chcą wyglądać profesjonalnie<br /><span>od pierwszego kontaktu.</span></h2>
-            <p>
-              Jeżeli prowadzisz lokalną usługę, gabinet, salon, ekipę montażową,
-              firmę budowlaną, gastronomię albo działalność jednoosobową — pomogę
-              Ci szybko stworzyć stronę i podstawowe materiały, które budują
-              zaufanie i ułatwiają klientom kontakt.
-            </p>
-          </div>
-          <div class="audience-list">
-            <article class="reveal"><span>01</span><h3>Dla nowych firm</h3><i data-lucide="arrow-up-right"></i></article>
-            <article class="reveal"><span>02</span><h3>Dla firm bez strony internetowej</h3><i data-lucide="arrow-up-right"></i></article>
-            <article class="reveal"><span>03</span><h3>Dla firm z przestarzałą stroną</h3><i data-lucide="arrow-up-right"></i></article>
-            <article class="reveal"><span>04</span><h3>Dla lokalnych usług</h3><i data-lucide="arrow-up-right"></i></article>
-            <article class="reveal"><span>05</span><h3>Dla firm, które chcą lepiej wyglądać w Google</h3><i data-lucide="arrow-up-right"></i></article>
-            <article class="reveal"><span>06</span><h3>Dla firm potrzebujących prostych materiałów reklamowych</h3><i data-lucide="arrow-up-right"></i></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section process-section" id="proces">
-        <div class="container process-layout">
-          <div class="process-heading reveal">
-            <p class="section-label">06 / JAK DZIAŁAMY</p>
-            <h2>Bez tygodni czekania.<br /><span>Gotowe do 60h.</span></h2>
-            <p>
-              Czas liczymy od ustalenia zakresu i otrzymania potrzebnych informacji.
-              Działamy szybko, konkretnie i bez rozbudowanego procesu.
-            </p>
-            <a class="button button-dark" href="#kontakt">
-              Omówmy Twój projekt
-              <i data-lucide="arrow-up-right"></i>
-            </a>
-          </div>
-
-          <div class="process-list">
-            <article class="process-step reveal">
-              <span>01</span>
-              <div>
-                <h3>Rozmowa</h3>
-                <p>Poznaję firmę, ofertę i zbieram wszystkie potrzebne informacje.</p>
-              </div>
-              <i data-lucide="messages-square" aria-hidden="true"></i>
-            </article>
-            <article class="process-step reveal">
-              <span>02</span>
-              <div>
-                <h3>Kierunek</h3>
-                <p>Ustalamy prosty zakres, styl i najważniejszy cel strony.</p>
-              </div>
-              <i data-lucide="route" aria-hidden="true"></i>
-            </article>
-            <article class="process-step reveal">
-              <span>03</span>
-              <div>
-                <h3>Projekt</h3>
-                <p>Do 48 godzin przygotowuję pierwszą gotową wersję.</p>
-              </div>
-              <i data-lucide="pen-tool" aria-hidden="true"></i>
-            </article>
-            <article class="process-step reveal">
-              <span>04</span>
-              <div>
-                <h3>Poprawki</h3>
-                <p>Przekazujesz uwagi, a ja od razu dopracowuję szczegóły.</p>
-              </div>
-              <i data-lucide="wand-sparkles" aria-hidden="true"></i>
-            </article>
-            <article class="process-step reveal">
-              <span>05</span>
-              <div>
-                <h3>Start</h3>
-                <p>Do 60 godzin publikujemy stronę i przekazuję gotowe materiały.</p>
-              </div>
-              <i data-lucide="rocket" aria-hidden="true"></i>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section studio-section" id="o-studiu">
-        <div class="container studio-layout">
-          <div class="studio-visual reveal" aria-hidden="true">
-            <div class="studio-poster">
-              <span>FREE HOME</span>
-              <strong>DESIGN<br />THAT<br /><i>WORKS.</i></strong>
-              <small>EST. 2026 / GŁOGÓW</small>
-            </div>
-            <div class="studio-label">
-              <span>AI</span>
-              <p>SZYBCIEJ<br />NIE ZNACZY<br />PRZYPADKOWO</p>
-            </div>
-            <div class="studio-cross">+</div>
-          </div>
-
-          <div class="studio-copy reveal">
-            <p class="section-label">07 / FREE HOME DESIGN STUDIO</p>
-            <h2>Prosto. Szybko.<br /><span>W uczciwej cenie.</span></h2>
-            <p class="studio-lead">
-              Wykorzystuję AI, aby mała firma nie musiała tygodniami czekać ani
-              płacić jak za pracę dużej agencji.
-            </p>
-            <p>
-              Nie dokładamy funkcji tylko po to, żeby projekt wyglądał na bardziej
-              skomplikowany. Liczy się czytelna oferta, dobry wygląd, widoczność
-              firmy i łatwy kontakt z klientem.
-            </p>
-            <div class="studio-values">
-              <div>
-                <strong>01</strong>
-                <span>prosto</span>
-                <p>Bez branżowego żargonu i przeciągania projektu.</p>
-              </div>
-              <div>
-                <strong>02</strong>
-                <span>szybko</span>
-                <p>Pierwsza wersja w 48h, finalizacja do 60h.</p>
-              </div>
-              <div>
-                <strong>03</strong>
-                <span>rozsądnie</span>
-                <p>Konkretny zakres i cena dostępna dla małej firmy.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section faq-section" id="faq">
-        <div class="container faq-layout">
-          <div class="faq-heading reveal">
-            <p class="section-label">08 / PYTANIA</p>
-            <h2>Konkretnie<br /><span>i bez tajemnic.</span></h2>
-            <p>Nie widzisz odpowiedzi? Zadzwoń lub napisz. Odpowiem po ludzku.</p>
-          </div>
-
-          <div class="faq-list">
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="true" aria-controls="faq-answer-1">
-                  <span>Czy muszę zamówić cały pakiet?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-1">
-                <p>
-                  Nie. Możesz wybrać samą stronę WWW albo pakiet FIRMA 360. Jeżeli
-                  w pakiecie 360 nie potrzebujesz któregoś elementu, pomijamy go i
-                  koncentrujemy się na tym, co realnie przyda się Twojej firmie.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-answer-2">
-                  <span>Ile trwa stworzenie strony?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-2" hidden>
-                <p>
-                  Pierwszą gotową wersję prostej strony one page przygotowuję do
-                  48 godzin, a całość finalizujemy do 60 godzin. Czas liczymy od
-                  ustalenia szczegółów i otrzymania kompletu materiałów. Termin
-                  zakłada sprawne przekazywanie uwag i akceptacji.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-answer-3">
-                  <span>Czy przygotujesz również teksty i zdjęcia?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-3" hidden>
-                <p>
-                  Tak. Pomagam ułożyć strukturę, przygotowuję treści i dobieram
-                  odpowiedni kierunek zdjęć lub grafik. Po Twojej stronie zostaje
-                  przekazanie wiedzy o firmie i akceptacja.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-answer-4">
-                  <span>Czy zajmujesz się domeną i uruchomieniem?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-4" hidden>
-                <p>
-                  Tak. Mogę pomóc wybrać domenę, skonfigurować hosting, pocztę,
-                  certyfikat SSL i opublikować stronę. Nie dostajesz katalogu plików,
-                  tylko działający serwis.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-answer-5">
-                  <span>Czy ceny są cenami końcowymi?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-5" hidden>
-                <p>
-                  Tak. Kwoty 2 990 zł i 5 990 zł są cenami końcowymi za opisany
-                  zakres. Osobno rozliczane są domena, hosting, płatne narzędzia
-                  oraz fizyczna produkcja większych materiałów i oklejenia auta.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <h3>
-                <button type="button" aria-expanded="false" aria-controls="faq-answer-6">
-                  <span>Czy tworzycie sklepy i rozbudowane serwisy?</span>
-                  <i data-lucide="plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="faq-answer" id="faq-answer-6" hidden>
-                <p>
-                  Nie. Specjalizujemy się w prostych stronach one page dla małych
-                  i lokalnych firm. Nie tworzymy sklepów internetowych, portali,
-                  paneli klienta ani rozbudowanych systemów. Dzięki temu działamy
-                  szybciej, prościej i w konkurencyjnej cenie.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="kontakt">
-        <div class="contact-marquee" aria-hidden="true">
-          <span>ZRÓBMY COŚ DOBREGO / ZRÓBMY COŚ DOBREGO / ZRÓBMY COŚ DOBREGO /</span>
-        </div>
-        <div class="container contact-layout">
-          <div class="contact-copy reveal">
-            <p class="section-label">09 / KONTAKT</p>
-            <h2>Masz firmę?<br /><span>Dajmy jej dobry wygląd.</span></h2>
-            <p>
-              Opowiedz krótko, czym się zajmujesz i czego potrzebujesz. Podpowiem,
-              od czego zacząć i przygotuję konkretny zakres.
-            </p>
-          </div>
-          <div class="contact-actions reveal">
-            <a class="contact-main" href="tel:+48537264666">
-              <span>
-                <small>ZADZWOŃ</small>
-                <strong>+48 537 264 666</strong>
-              </span>
-              <i data-lucide="phone" aria-hidden="true"></i>
-            </a>
-            <a class="contact-main" href="mailto:kontakt@freehome.com.pl">
-              <span>
-                <small>NAPISZ E-MAIL</small>
-                <strong>kontakt@freehome.com.pl</strong>
-              </span>
-              <i data-lucide="mail" aria-hidden="true"></i>
-            </a>
-            <a
-              class="contact-main contact-main-accent"
-              href="https://wa.me/48537264666?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82bym%20porozmawia%C4%87%20o%20wizerunku%20mojej%20firmy."
-              target="_blank"
-              rel="noopener"
-            >
-              <span>
-                <small>NAJSZYBCIEJ</small>
-                <strong>Napisz na WhatsApp</strong>
-              </span>
-              <i data-lucide="message-circle" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-top">
-        <a class="brand brand-footer" href="#top">
-          <img
-            class="brand-logo brand-logo-full"
-            src="assets/free-home-design-logo.svg"
-            alt="FREE HOME DESIGN STUDIO"
-            width="230"
-            height="46"
-            loading="lazy"
-          />
-        </a>
-        <p>Kompletny wizerunek firmy. Od pierwszego pomysłu do gotowego wdrożenia.</p>
-        <a class="footer-top-link" href="#top">WRÓĆ NA GÓRĘ <i data-lucide="arrow-up"></i></a>
-      </div>
-      <div class="container footer-bottom">
-        <p>
-          © <span data-year>2026</span>
-          <a href="https://nowoczesnaklimatyzacja.com.pl" target="_blank" rel="noopener">Projekt i realizacja: FREE HOME design Studio</a>
-        </p>
-        <div>
-          <a href="#oferta">Oferta</a>
-          <a href="#realizacje">Realizacje</a>
-          <a href="#proces">Proces</a>
-          <a href="#cennik">Cennik</a>
-          <a href="#kontakt">Kontakt</a>
-        </div>
-        <p>Głogów / Polska</p>
-      </div>
-    </footer>
-
-    <div class="mobile-contact-bar" aria-label="Szybki kontakt">
-      <a href="tel:+48537264666">
-        <i data-lucide="phone" aria-hidden="true"></i>
-        Zadzwoń
-      </a>
-      <a
-        href="https://wa.me/48537264666?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82bym%20porozmawia%C4%87%20o%20wizerunku%20mojej%20firmy."
-        target="_blank"
-        rel="noopener"
-      >
-        <i data-lucide="message-circle" aria-hidden="true"></i>
-        WhatsApp
-      </a>
+      <a class="phone" href="tel:+48606713838">606 713 838</a>
     </div>
+  </header>
 
-    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <div class="badge">❄️ Montaż • Serwis • Domowe systemy</div>
+          <h1>Klimatyzacja do domu, mieszkania i firmy.</h1>
+          <p class="lead">Nowoczesna Klimatyzacja — Tomasz Chrośniak. Pomagamy dobrać, zamontować i serwisować klimatyzację tak, aby działała cicho, wydajnie i bezproblemowo przez lata.</p>
+          <div class="cta">
+            <a class="btn primary" href="tel:+48606713838">Zadzwoń teraz</a>
+            <a class="btn secondary" href="#kontakt">Poproś o wycenę</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/foto-6.jpeg" alt="Samochód firmowy Nowoczesna Klimatyzacja" />
+          <div class="floating">Szybki kontakt: 606 713 838</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="uslugi">
+      <div class="wrap">
+        <div class="title">
+          <h2>Czym się zajmujemy?</h2>
+          <p>Prosto, konkretnie i bez kombinowania — dobór urządzenia, estetyczny montaż oraz późniejszy serwis.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">❄️</div>
+            <h3>Montaż klimatyzacji</h3>
+            <p>Montaż klimatyzatorów typu split i multi-split w domach, mieszkaniach, biurach oraz lokalach usługowych.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Serwis i przeglądy</h3>
+            <p>Czyszczenie, odgrzybianie, kontrola szczelności i sprawdzenie pracy urządzenia przed sezonem.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Domowe systemy</h3>
+            <p>Doradztwo przy wyborze rozwiązań do domu: chłodzenie, dogrzewanie, komfort i wygodna obsługa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-nas">
+      <div class="wrap split">
+        <img src="assets/foto-1.jpeg" alt="Wizytówki Nowoczesna Klimatyzacja" />
+        <div>
+          <div class="title" style="text-align:left;margin-bottom:16px">
+            <h2>Solidny montaż i czysta robota</h2>
+            <p>Nie chodzi tylko o samo powieszenie klimatyzatora. Liczy się dobór mocy, estetyczne prowadzenie instalacji, szczelność, kultura pracy i to, żeby po montażu wszystko wyglądało porządnie.</p>
+          </div>
+          <div class="list">
+            <div class="li"><span class="check">✓</span><span>Pomoc w doborze odpowiedniego urządzenia do pomieszczenia.</span></div>
+            <div class="li"><span class="check">✓</span><span>Estetyczne wykonanie instalacji i przejrzyste ustalenia przed pracą.</span></div>
+            <div class="li"><span class="check">✓</span><span>Obsługa klientów indywidualnych oraz małych firm.</span></div>
+            <div class="li"><span class="check">✓</span><span>Kontakt bezpośrednio z wykonawcą — Tomasz Chrośniak.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="realizacje">
+      <div class="wrap">
+        <div class="title">
+          <h2>Portfolio i identyfikacja</h2>
+          <p>Profesjonalny wizerunek, spójne kolory i jasny komunikat: montaż, serwis, domowe systemy.</p>
+        </div>
+        <div class="gallery">
+          <img src="assets/foto-2.jpeg" alt="Materiały firmowe Nowoczesna Klimatyzacja" />
+          <img src="assets/foto-4.jpeg" alt="Oklejenie samochodu Nowoczesna Klimatyzacja" />
+          <img src="assets/foto-3.jpeg" alt="Tył samochodu Nowoczesna Klimatyzacja" />
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <h2>Potrzebujesz klimatyzacji?</h2>
+            <p>Zadzwoń i powiedz, gdzie ma być zamontowane urządzenie. Ustalimy szczegóły, doradzimy rozwiązanie i przygotujemy wycenę.</p>
+          </div>
+          <a class="phone" href="tel:+48606713838">606 713 838</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© Nowoczesna Klimatyzacja — Tomasz Chrośniak. Montaż • Serwis • Domowe systemy.</div>
+  </footer>
+</body>
 </html>
