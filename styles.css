@@ -1362,6 +1362,10 @@ ul {
   color: rgba(255, 255, 255, 0.4);
 }
 
+.work-section .section-heading {
+  margin-bottom: 40px;
+}
+
 .section-heading-light h2 span {
   color: var(--accent);
 }
@@ -2040,7 +2044,7 @@ ul {
   grid-template-columns: 1.15fr 0.85fr auto;
   gap: 45px;
   align-items: center;
-  margin-top: 16px;
+  margin-top: 0;
   padding: 40px;
   border: 1px solid var(--line-light);
   background:
