@@ -18,9 +18,13 @@ Strona nie wymaga instalowania zależności ani procesu budowania.
 
 ## Publikacja
 
-Repozytorium jest przygotowane pod GitHub Pages. Po pushu na gałąź `main`
-workflow `.github/workflows/pages.yml` publikuje statyczną stronę z katalogu
-głównego.
+Repozytorium jest przygotowane pod GitHub Pages. Po włączeniu publikacji z
+gałęzi `main` w ustawieniach repozytorium każdy `push` od razu odświeża stronę.
+W katalogu głównym znajdują się pliki statyczne, więc nie ma tu żadnego buildu
+ani zależności od Netlify.
+
+Plik `CNAME` wskazuje domenę `www.freehomedesign.pl`, a `.nojekyll` wyłącza
+obsługę Jekylla, żeby GitHub Pages serwował pliki dokładnie tak, jak są w repo.
 
 ## Pliki
 
