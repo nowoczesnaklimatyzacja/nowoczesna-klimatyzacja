@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Define a single arm of the snowflake -->
+    <g id="arm">
+      <!-- Main vertical line -->
+      <line x1="256" y1="256" x2="256" y2="60" stroke="#00B4D8" stroke-width="28" stroke-linecap="round" />
+      <!-- Outer v-shape -->
+      <path d="M 216 110 L 256 150 L 296 110" stroke="#00B4D8" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <!-- Inner v-shape -->
+      <path d="M 224 180 L 256 212 L 288 180" stroke="#00B4D8" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+  </defs>
+  <!-- 6 arms rotated by 0, 60, 120, 180, 240, 300 degrees -->
+  <use href="#arm" transform="rotate(0 256 256)" />
+  <use href="#arm" transform="rotate(60 256 256)" />
+  <use href="#arm" transform="rotate(120 256 256)" />
+  <use href="#arm" transform="rotate(180 256 256)" />
+  <use href="#arm" transform="rotate(240 256 256)" />
+  <use href="#arm" transform="rotate(300 256 256)" />
+  
+  <!-- Central decoration -->
+  <circle cx="256" cy="256" r="24" fill="#00B4D8" />
+</svg>

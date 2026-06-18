@@ -1,222 +1,1139 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nowoczesna Klimatyzacja — Tomasz Chrośniak</title>
-  <meta name="description" content="Nowoczesna Klimatyzacja — montaż, serwis i domowe systemy klimatyzacji. Tomasz Chrośniak, tel. 606 713 838." />
-  <style>
-    :root{
-      --navy:#123d78;
-      --blue:#0f8ed8;
-      --light:#e9f7ff;
-      --ice:#f7fcff;
-      --white:#ffffff;
-      --text:#10213a;
-      --muted:#5f7087;
-      --shadow:0 24px 70px rgba(10, 55, 110, .18);
-      --radius:24px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      background:linear-gradient(180deg,#f6fbff 0%,#ffffff 42%,#eef8ff 100%);
-      line-height:1.55;
-    }
-    a{text-decoration:none;color:inherit}
-    .wrap{width:min(1160px,92%);margin:0 auto}
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(255,255,255,.86);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(18,61,120,.08);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .logo{font-weight:900;letter-spacing:1px;color:var(--navy);font-size:22px;line-height:1}
-    .logo span{display:block;color:var(--blue);font-weight:800;font-size:13px;letter-spacing:7px;margin-top:6px}
-    .navlinks{display:flex;gap:24px;color:#31506f;font-size:15px}
-    .phone{
-      background:linear-gradient(135deg,var(--blue),var(--navy));
-      color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;
-      box-shadow:0 10px 26px rgba(15,142,216,.25);
-    }
-    .hero{padding:70px 0 54px;position:relative;overflow:hidden}
-    .hero:before{
-      content:"";position:absolute;right:-180px;top:-140px;width:620px;height:620px;
-      background:radial-gradient(circle,rgba(15,142,216,.20),rgba(15,142,216,0) 64%);
-      pointer-events:none;
-    }
-    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-    .badge{display:inline-flex;gap:10px;align-items:center;background:#fff;border:1px solid rgba(15,142,216,.18);padding:9px 14px;border-radius:999px;color:var(--navy);font-weight:800;font-size:14px}
-    h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:22px 0 20px;color:var(--navy);letter-spacing:-2px}
-    h1 strong{color:var(--blue)}
-    .lead{font-size:20px;color:#3d526c;max-width:640px;margin-bottom:30px}
-    .cta{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:15px 22px;border-radius:999px;font-weight:900;border:2px solid transparent;
-    }
-    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;box-shadow:var(--shadow)}
-    .btn.secondary{background:#fff;border-color:rgba(18,61,120,.15);color:var(--navy)}
-    .hero-card{position:relative}
-    .hero-card img{width:100%;border-radius:30px;box-shadow:var(--shadow);display:block}
-    .floating{
-      position:absolute;left:-24px;bottom:24px;background:#fff;border-radius:22px;padding:18px 20px;
-      box-shadow:0 20px 50px rgba(18,61,120,.18);font-weight:900;color:var(--navy)
-    }
-    section{padding:62px 0}
-    .title{text-align:center;margin-bottom:34px}
-    .title h2{font-size:clamp(30px,4vw,48px);color:var(--navy);margin:0 0 10px}
-    .title p{color:var(--muted);margin:0 auto;max-width:760px;font-size:18px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{
-      background:#fff;border:1px solid rgba(18,61,120,.08);border-radius:var(--radius);
-      padding:28px;box-shadow:0 16px 44px rgba(18,61,120,.08)
-    }
-    .icon{
-      width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#dff5ff,#b9e9ff);
-      display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px
-    }
-    .card h3{margin:0 0 10px;color:var(--navy);font-size:23px}
-    .card p{margin:0;color:var(--muted)}
-    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
-    .split img{width:100%;border-radius:28px;box-shadow:var(--shadow)}
-    .list{display:grid;gap:14px;margin-top:22px}
-    .li{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:15px 16px;border:1px solid rgba(15,142,216,.12)}
-    .check{color:#0f8ed8;font-weight:900}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:22px;box-shadow:0 14px 36px rgba(18,61,120,.12)}
-    .contact{
-      background:linear-gradient(135deg,var(--navy),#07214a);
-      color:#fff;border-radius:34px;padding:44px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
-      position:relative;overflow:hidden;
-    }
-    .contact:after{content:"";position:absolute;right:-90px;bottom:-120px;width:420px;height:420px;background:radial-gradient(circle,rgba(80,199,255,.32),transparent 62%)}
-    .contact h2{font-size:42px;line-height:1.05;margin:0 0 12px;position:relative;z-index:1}
-    .contact p{color:#d8efff;margin:0;max-width:650px;position:relative;z-index:1}
-    .contact .phone{position:relative;z-index:1;background:#fff;color:var(--navy)}
-    footer{padding:28px 0;color:#6b7e92;text-align:center}
-    @media(max-width:860px){
-      .grid,.split,.contact{grid-template-columns:1fr}
-      .cards,.gallery{grid-template-columns:1fr}
-      .navlinks{display:none}
-      .floating{position:static;margin-top:14px}
-      .contact{padding:32px 24px}
-      .contact h2{font-size:32px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowoczesna Klimatyzacja - Tomasz Chrośniak | Montaż, Serwis, Systemy Domowe</title>
+    
+    <!-- Ikony i Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B2545',   // Głęboki granat z logo/wizytówki
+                            blue: '#134074',   // Średni niebieski profesjonalny
+                            light: '#8DA9C4',  // Jasny błękit lodowy
+                            ice: '#EEF4F8',    // Ultralekkie tło lodowe
+                            accent: '#00B4D8'  // Żywy, nowoczesny błękit nawiewu
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wave-bg {
+            background-image: linear-gradient(135deg, #0B2545 0%, #134074 100%);
+        }
+        /* Custom dynamic animation for air flow in simulator */
+        @keyframes blow-cool {
+            0% { transform: translateY(0) scaleX(0.8); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(80px) scaleX(1.3); opacity: 0; }
+        }
+        @keyframes blow-warm {
+            0% { transform: translateY(0) scaleX(0.8); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateY(80px) scaleX(1.3); opacity: 0; }
+        }
+        .animate-blow-cool {
+            animation: blow-cool 1.4s infinite linear;
+        }
+        .animate-blow-warm {
+            animation: blow-warm 1.4s infinite linear;
+        }
+        .snowflake-card:hover .snowflake-icon {
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="wrap nav">
-      <a class="logo" href="#">NOWOCZESNA<span>KLIMATYZACJA</span></a>
-      <nav class="navlinks">
-        <a href="#uslugi">Usługi</a>
-        <a href="#o-nas">O nas</a>
-        <a href="#realizacje">Realizacje</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a class="phone" href="tel:+48606713838">606 713 838</a>
+<body class="bg-brand-ice text-slate-800 font-sans selection:bg-brand-accent selection:text-white overflow-x-hidden">
+
+    <!-- TOAST NOTIFICATION FOR COPY TO CLIPBOARD -->
+    <div id="toast" class="fixed bottom-5 right-5 z-[110] bg-brand-dark text-white border border-brand-accent/30 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
+        <div class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
+            <i class="fa-solid fa-copy"></i>
+        </div>
+        <div class="text-left">
+            <p class="font-bold text-sm">Skopiowano do schowka!</p>
+            <p class="text-xs text-slate-300" id="toast-msg">Numer telefonu jest gotowy do wklejenia.</p>
+        </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap grid">
-        <div>
-          <div class="badge">❄️ Montaż • Serwis • Domowe systemy</div>
-          <h1>Klimatyzacja do domu, mieszkania i firmy.</h1>
-          <p class="lead">Nowoczesna Klimatyzacja — Tomasz Chrośniak. Pomagamy dobrać, zamontować i serwisować klimatyzację tak, aby działała cicho, wydajnie i bezproblemowo przez lata.</p>
-          <div class="cta">
-            <a class="btn primary" href="tel:+48606713838">Zadzwoń teraz</a>
-            <a class="btn secondary" href="#kontakt">Poproś o wycenę</a>
-          </div>
+    <!-- TOP NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex flex-col text-left">
+                    <span class="font-montserrat font-black text-2xl tracking-tight text-brand-dark leading-none">NOWOCZESNA</span>
+                    <span class="font-montserrat font-bold text-xs tracking-[0.27em] text-brand-accent leading-none mt-1">KLIMATYZACJA</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 font-semibold text-slate-600">
+                    <a href="#o-nas" class="hover:text-brand-accent transition-colors">O nas</a>
+                    <a href="#uslugi" class="hover:text-brand-accent transition-colors">Oferta</a>
+                    <a href="#symulator" class="hover:text-brand-accent transition-colors">Wirtualny klimatyzator</a>
+                    <a href="#kalkulator" class="hover:text-brand-accent transition-colors">Kalkulator</a>
+                    <a href="#faq" class="hover:text-brand-accent transition-colors">FAQ</a>
+                    <a href="#kontakt" class="hover:text-brand-accent transition-colors">Kontakt</a>
+                </nav>
+
+                <!-- CTA Button (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button onclick="handlePhoneClick('606713838', event)" class="flex items-center gap-2 bg-brand-dark hover:bg-brand-blue text-white px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-md shadow-brand-dark/10">
+                        <i class="fa-solid fa-phone text-brand-accent"></i>
+                        <span>606 713 838</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center p-2 text-slate-600 hover:text-brand-accent focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
-        <div class="hero-card">
-          <img src="assets/foto-6.jpeg" alt="Samochód firmowy Nowoczesna Klimatyzacja" />
-          <div class="floating">Szybki kontakt: 606 713 838</div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#o-nas" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">O nas</a>
+            <a href="#uslugi" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">Oferta</a>
+            <a href="#symulator" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">Wirtualny Klimatyzator</a>
+            <a href="#kalkulator" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">Kalkulator wyceny</a>
+            <a href="#faq" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">FAQ</a>
+            <a href="#kontakt" class="block py-2.5 px-3 rounded-lg hover:bg-brand-ice font-semibold text-slate-700 text-left">Kontakt</a>
+            <div class="pt-4">
+                <button onclick="handlePhoneClick('606713838', event)" class="w-full flex items-center justify-center gap-3 bg-brand-dark text-white p-4 rounded-xl font-bold">
+                    <i class="fa-solid fa-phone text-brand-accent"></i>
+                    <span>Zadzwoń: 606 713 838</span>
+                </button>
+            </div>
         </div>
-      </div>
+    </header>
+
+    <!-- HERO SECTION WITH INTEGRATED INTERACTIVE SIMULATOR -->
+    <section class="relative wave-bg text-white overflow-hidden py-12 lg:py-24">
+        <!-- Wave Graphic in Background -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 320L48 314.7C96 309.3 192 298.7 288 277.3C384 256 480 224 576 218.7C672 213.3 768 234.7 864 261.3C960 288 1056 320 1152 309.3C1248 298.7 1344 245.3 1392 218.7L1440 192V800H1392C1344 800 1248 800 1152 800C1056 800 960 800 864 800C768 800 672 800 576 800C480 800 384 800 288 800C192 800 96 800 48 800H0V320Z" fill="url(#hero-grad)" />
+                <defs>
+                    <linearGradient id="hero-grad" x1="720" y1="0" x2="720" y2="800" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#00F0FF" />
+                        <stop offset="1" stop-color="#0072FF" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Left: Sales Copy -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wider uppercase text-brand-accent">
+                    <i class="fa-regular fa-snowflake animate-spin" style="animation-duration: 6s;"></i> Komfort przez cały rok
+                </div>
+                <h1 class="font-montserrat font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white">
+                    Profesjonalny montaż <br>i serwis <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-brand-accent">klimatyzacji</span>
+                </h1>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                    Projektujemy, instalujemy i serwisujemy nowoczesne systemy klimatyzacyjne dla domów, mieszkań i biur. Ciesz się idealną temperaturą w upalne lato i ciepłem w mroźną zimę.
+                </p>
+                
+                <!-- Quick Brand Bullet Points -->
+                <div class="grid grid-cols-3 gap-4 pt-4 max-w-lg mx-auto lg:mx-0 text-left">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
+                            <i class="fa-solid fa-check text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Szybki Montaż</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
+                            <i class="fa-solid fa-screwdriver-wrench text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Pełen Serwis</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent">
+                            <i class="fa-solid fa-house-chimney text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Systemy Domowe</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#kalkulator" class="bg-brand-accent hover:bg-cyan-400 text-brand-dark px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-0.5 shadow-lg shadow-brand-accent/25 text-center">
+                        <i class="fa-solid fa-calculator mr-2"></i> Oblicz koszt montażu
+                    </a>
+                    <button onclick="handlePhoneClick('606713838', event)" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone text-brand-accent"></i>
+                        <span>Zadzwoń: 606 713 838</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Right: Interactive AC Simulator widget -->
+            <div id="symulator" class="lg:col-span-5 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl relative">
+                <!-- Decorative snowflake badge -->
+                <div class="absolute -top-4 -right-4 bg-brand-accent text-brand-dark w-12 h-12 rounded-full flex items-center justify-center font-bold shadow-lg shadow-brand-accent/30 animate-pulse">
+                    <i class="fa-solid fa-snowflake text-lg"></i>
+                </div>
+
+                <h3 class="font-montserrat font-bold text-xl text-white mb-2 flex items-center gap-2 text-left">
+                    <i class="fa-solid fa-sliders text-brand-accent"></i> Wypróbuj nasze klimatyzatory!
+                </h3>
+                <p class="text-xs text-slate-300 mb-6 text-left">Włącz wirtualną klimatyzację i sprawdź, jak działa nowoczesne chłodzenie.</p>
+
+                <!-- Simulated AC Unit -->
+                <div class="bg-slate-900/40 rounded-2xl p-6 border border-white/10 relative overflow-hidden mb-6">
+                    <!-- AC Shell -->
+                    <div class="bg-gradient-to-b from-white to-slate-100 rounded-lg py-4 px-6 relative shadow-inner flex justify-between items-center z-10">
+                        <div class="flex items-center gap-3">
+                            <span class="h-2 w-2 rounded-full bg-green-500 animate-ping" id="ac-led"></span>
+                            <span class="text-[9px] font-bold tracking-widest text-slate-400">NOWOCZESNA AC</span>
+                        </div>
+                        
+                        <!-- Mini LED Display -->
+                        <div class="bg-slate-800 text-cyan-400 font-mono px-3 py-1 rounded text-sm font-bold tracking-widest shadow-inner border border-slate-700/50 flex items-center gap-1">
+                            <span id="screen-temp">21</span><span>°C</span>
+                            <span id="screen-mode-icon" class="text-xs ml-1"><i class="fa-solid fa-snowflake"></i></span>
+                        </div>
+
+                        <!-- Wings/Blades bottom visual -->
+                        <div class="absolute bottom-0 left-4 right-4 h-1 bg-slate-300 rounded-b"></div>
+                    </div>
+
+                    <!-- Flow Animation Area -->
+                    <div class="h-20 relative flex justify-around items-start overflow-hidden pt-2">
+                        <!-- Simulated breeze waves -->
+                        <div id="breeze-waves" class="hidden absolute inset-x-0 top-0 flex justify-around pointer-events-none">
+                            <div class="w-1.5 h-10 bg-gradient-to-b from-brand-accent/40 to-transparent rounded-full animate-blow-cool" style="animation-delay: 0s;"></div>
+                            <div class="w-1.5 h-10 bg-gradient-to-b from-brand-accent/40 to-transparent rounded-full animate-blow-cool" style="animation-delay: 0.3s;"></div>
+                            <div class="w-1.5 h-10 bg-gradient-to-b from-brand-accent/40 to-transparent rounded-full animate-blow-cool" style="animation-delay: 0.6s;"></div>
+                            <div class="w-1.5 h-10 bg-gradient-to-b from-brand-accent/40 to-transparent rounded-full animate-blow-cool" style="animation-delay: 0.1s;"></div>
+                            <div class="w-1.5 h-10 bg-gradient-to-b from-brand-accent/40 to-transparent rounded-full animate-blow-cool" style="animation-delay: 0.4s;"></div>
+                        </div>
+                        <div id="status-text" class="text-center text-xs text-slate-400 w-full mt-4 italic">Klimatyzator jest wyłączony.</div>
+                    </div>
+                </div>
+
+                <!-- Controls Interface -->
+                <div class="space-y-4">
+                    <!-- Power & Mode selectors -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <button id="btn-power" onclick="toggleAC()" class="w-full bg-red-500 hover:bg-red-600 text-white p-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-power-off"></i>
+                            <span id="power-text">Włącz urządzenie</span>
+                        </button>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <button id="btn-cool" onclick="setMode('cool')" class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 p-2 rounded-xl text-sm font-bold flex flex-col items-center justify-center hover:bg-cyan-500/30 transition-all opacity-50 cursor-not-allowed" disabled>
+                                <i class="fa-solid fa-snowflake text-base"></i>
+                                <span class="text-[10px] mt-1">Chłodzenie</span>
+                            </button>
+                            <button id="btn-heat" onclick="setMode('heat')" class="bg-orange-500/20 text-orange-300 border border-orange-500/30 p-2 rounded-xl text-sm font-bold flex flex-col items-center justify-center hover:bg-orange-500/30 transition-all opacity-50 cursor-not-allowed" disabled>
+                                <i class="fa-solid fa-sun text-base"></i>
+                                <span class="text-[10px] mt-1">Grzanie</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Temp range slider & quick adjusters -->
+                    <div class="bg-slate-900/20 rounded-xl p-4 border border-white/5 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold text-slate-300">Regulacja Temperatury</span>
+                            <div class="flex gap-2">
+                                <button onclick="adjustTemp(-1)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white font-bold transition-all" id="btn-temp-down" disabled>-</button>
+                                <button onclick="adjustTemp(1)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white font-bold transition-all" id="btn-temp-up" disabled>+</button>
+                            </div>
+                        </div>
+                        <input type="range" id="temp-slider" min="16" max="30" value="21" oninput="updateTempSlider(this.value)" class="w-full accent-brand-accent bg-slate-700 h-1.5 rounded-lg appearance-none cursor-not-allowed" disabled>
+                        <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+                            <span>16°C (Ekstremalny chłód)</span>
+                            <span>30°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="uslugi">
-      <div class="wrap">
-        <div class="title">
-          <h2>Czym się zajmujemy?</h2>
-          <p>Prosto, konkretnie i bez kombinowania — dobór urządzenia, estetyczny montaż oraz późniejszy serwis.</p>
+    <!-- KEY STATS & TRUST BADGES -->
+    <section class="relative z-10 -mt-8 max-w-6xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
+            <div class="p-6 text-center space-y-2 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-brand-accent/10 flex items-center justify-center text-star text-xl text-brand-accent mb-2">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h4 class="font-montserrat font-bold text-lg text-brand-dark">100% Zadowolonych Klientów</h4>
+                <p class="text-sm text-slate-500">Najwyższy standard montażu i czystości u klienta.</p>
+            </div>
+            <div class="p-6 text-center space-y-2 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-brand-accent/10 flex items-center justify-center text-xl text-brand-accent mb-2">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h4 class="font-montserrat font-bold text-lg text-brand-dark">Szybkie Terminy</h4>
+                <p class="text-sm text-slate-500">Dbamy o czas naszych klientów. Szybka wycena i dogodny termin.</p>
+            </div>
+            <div class="p-6 text-center space-y-2 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-brand-accent/10 flex items-center justify-center text-xl text-brand-accent mb-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="font-montserrat font-bold text-lg text-brand-dark">Gwarancja i Serwis</h4>
+                <p class="text-sm text-slate-500">Pełne wsparcie pogwarancyjne oraz okresowe czyszczenie urządzeń.</p>
+            </div>
         </div>
-        <div class="cards">
-          <div class="card">
-            <div class="icon">❄️</div>
-            <h3>Montaż klimatyzacji</h3>
-            <p>Montaż klimatyzatorów typu split i multi-split w domach, mieszkaniach, biurach oraz lokalach usługowych.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🛠️</div>
-            <h3>Serwis i przeglądy</h3>
-            <p>Czyszczenie, odgrzybianie, kontrola szczelności i sprawdzenie pracy urządzenia przed sezonem.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🏠</div>
-            <h3>Domowe systemy</h3>
-            <p>Doradztwo przy wyborze rozwiązań do domu: chłodzenie, dogrzewanie, komfort i wygodna obsługa.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="o-nas">
-      <div class="wrap split">
-        <img src="assets/foto-1.jpeg" alt="Wizytówki Nowoczesna Klimatyzacja" />
-        <div>
-          <div class="title" style="text-align:left;margin-bottom:16px">
-            <h2>Solidny montaż i czysta robota</h2>
-            <p>Nie chodzi tylko o samo powieszenie klimatyzatora. Liczy się dobór mocy, estetyczne prowadzenie instalacji, szczelność, kultura pracy i to, żeby po montażu wszystko wyglądało porządnie.</p>
-          </div>
-          <div class="list">
-            <div class="li"><span class="check">✓</span><span>Pomoc w doborze odpowiedniego urządzenia do pomieszczenia.</span></div>
-            <div class="li"><span class="check">✓</span><span>Estetyczne wykonanie instalacji i przejrzyste ustalenia przed pracą.</span></div>
-            <div class="li"><span class="check">✓</span><span>Obsługa klientów indywidualnych oraz małych firm.</span></div>
-            <div class="li"><span class="check">✓</span><span>Kontakt bezpośrednio z wykonawcą — Tomasz Chrośniak.</span></div>
-          </div>
+    <!-- O NAS SECTION -->
+    <section id="o-nas" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left side: Polish text -->
+            <div class="lg:col-span-6 space-y-6 text-left">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-brand-accent">Poznaj firmę</span>
+                <h2 class="font-montserrat font-black text-3xl sm:text-4xl text-brand-dark leading-tight">
+                    Profesjonalizm, który przynosi ulgę w upalne dni
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Nazywam się <strong>Tomasz Chrośniak</strong> i stoję na czele firmy <strong>Nowoczesna Klimatyzacja</strong>. Specjalizujemy się w profesjonalnym doradztwie, doborze, montażu oraz kompletnym serwisie systemów klimatyzacyjnych dla domów prywatnych, mieszkań, a także lokali usługowych.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Każdą instalację traktujemy indywidualnie – dopasowujemy moc klimatyzatora do kubatury pomieszczeń oraz wymagań domowników. Naszym celem jest zapewnienie maksymalnego komfortu termicznego przy optymalnym zużyciu energii elektrycznej.
+                </p>
+                
+                <div class="border-l-4 border-brand-accent pl-4 py-2 italic text-slate-500 bg-brand-ice/50 rounded-r-xl">
+                    "Zadbaj o czyste powietrze, odpowiednią wilgotność i optymalną temperaturę w swoim domu z systemami Nowoczesna Klimatyzacja."
+                </div>
+
+                <!-- Call to action card -->
+                <div class="bg-brand-dark text-white p-6 rounded-2xl flex flex-col sm:flex-row items-center gap-6 justify-between shadow-lg text-left">
+                    <div>
+                        <p class="text-xs text-brand-light uppercase font-bold tracking-wider">Potrzebujesz szybkiej wyceny?</p>
+                        <p class="font-montserrat font-bold text-lg mt-1">Skontaktuj się bezpośrednio ze mną!</p>
+                    </div>
+                    <button onclick="handlePhoneClick('606713838', event)" class="bg-brand-accent hover:bg-cyan-400 text-brand-dark font-bold px-6 py-3 rounded-xl transition-all whitespace-nowrap">
+                        <i class="fa-solid fa-phone mr-1"></i> Zadzwoń teraz
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right side: Visual Graphic representing modern air conditioning setup -->
+            <div class="lg:col-span-6 relative">
+                <div class="relative bg-gradient-to-tr from-brand-dark to-brand-blue p-8 sm:p-12 rounded-3xl text-white shadow-2xl overflow-hidden aspect-video flex flex-col justify-between text-left">
+                    <!-- Tech wave shapes -->
+                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-brand-accent/20 blur-2xl"></div>
+                    <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-brand-accent/15 blur-2xl"></div>
+                    
+                    <div class="flex justify-between items-start z-10">
+                        <div class="flex flex-col">
+                            <span class="font-montserrat font-black text-xl text-white">NOWOCZESNA KLIMATYZACJA</span>
+                            <span class="text-xs text-brand-accent font-mono">DEDYKOWANE ROZWIĄZANIA</span>
+                        </div>
+                        <i class="fa-solid fa-snowflake text-4xl text-brand-accent/40 animate-spin" style="animation-duration: 20s;"></i>
+                    </div>
+
+                    <!-- Schematic layout of Split AC unit blowing fresh air inside a warm house -->
+                    <div class="my-6 p-4 bg-white/5 border border-white/10 rounded-2xl z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="text-3xl text-brand-accent">
+                                <i class="fa-solid fa-house-laptop"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-xs text-slate-300">Optymalizacja Systemu Domowego</div>
+                                <div class="font-semibold text-sm text-white">Inteligentne Chłodzenie i Ogrzewanie</div>
+                                <div class="w-full bg-white/20 h-1.5 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-brand-accent h-full w-[85%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-brand-accent/20 text-brand-accent px-2 py-1 rounded">85% EKO</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center text-xs text-slate-300 border-t border-white/10 pt-4 z-10">
+                        <span><i class="fa-solid fa-certificate text-brand-accent mr-1"></i> Certyfikowany Instalator</span>
+                        <span><i class="fa-solid fa-screwdriver-wrench text-brand-accent mr-1"></i> Gwarancja Jakości</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="realizacje">
-      <div class="wrap">
-        <div class="title">
-          <h2>Portfolio i identyfikacja</h2>
-          <p>Profesjonalny wizerunek, spójne kolory i jasny komunikat: montaż, serwis, domowe systemy.</p>
+    <!-- USŁUGI / OFERTA SECTION -->
+    <section id="uslugi" class="bg-white py-20 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-brand-accent">Kompleksowe Usługi</span>
+                <h2 class="font-montserrat font-black text-3xl sm:text-4xl text-brand-dark">Co oferujemy?</h2>
+                <p class="text-slate-500">Zapewniamy pełen cykl obsługi urządzeń klimatyzacyjnych. Bezpiecznie, czysto i z troską o optymalną pracę Twojego urządzenia przez lata.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <!-- Usługa 1: Montaż -->
+                <div class="group snowflake-card bg-brand-ice/40 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-brand-accent/30 hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <i class="fa-solid fa-screwdriver-wrench snowflake-icon transition-transform duration-300"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-brand-dark mb-3">PROFESJONALNY MONTAŻ</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Instalacja jednostek wewnętrznych i zewnętrznych estetycznie, czysto i bez uszkodzeń elewacji czy ścian. Dobieramy odpowiednią grubość rur, odpływ skroplin grawitacyjny lub za pomocą pompek skroplin.
+                    </p>
+                    <ul class="space-y-2 text-xs font-bold text-slate-600 mb-8">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Bezinwazyjne przebicia przez grube mury</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Próba szczelności azotem pod wysokim ciśnieniem</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Próżniowe przygotowanie układu chłodniczego</li>
+                    </ul>
+                </div>
+
+                <!-- Usługa 2: Serwis -->
+                <div class="group snowflake-card bg-brand-ice/40 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-brand-accent/30 hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <i class="fa-solid fa-snowflake snowflake-icon transition-transform duration-300"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-brand-dark mb-3">OKRESOWY SERWIS</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Klimatyzacja wymaga regularnego czyszczenia i odgrzybiania, by chronić Twoje płuca przed drobnoustrojami. Przeprowadzamy pełną dezynfekcję, czyszczenie parowników i skraplaczy.
+                    </p>
+                    <ul class="space-y-2 text-xs font-bold text-slate-600 mb-8">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Bezpieczne odgrzybianie metodą chemiczną / parową</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Kontrola ilości czynnika chłodniczego w układzie</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Czyszczenie i drożność odpływu skroplin</li>
+                    </ul>
+                </div>
+
+                <!-- Usługa 3: Domowe Systemy -->
+                <div class="group snowflake-card bg-brand-ice/40 hover:bg-white rounded-3xl p-8 border border-slate-100 hover:border-brand-accent/30 hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center text-2xl mb-6 shadow-md group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors duration-300">
+                        <i class="fa-solid fa-house-chimney snowflake-icon transition-transform duration-300"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-brand-dark mb-3">SYSTEMY DOMOWE i MULTI-SPLIT</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Tworzymy instalacje multi-split (wiele jednostek wewnętrznych podłączonych do jednego agregatu zewnętrznego) oraz systemy sterowane przez domowe Wi-Fi – idealne do inteligentnego domu.
+                    </p>
+                    <ul class="space-y-2 text-xs font-bold text-slate-600 mb-8">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Integracja klimatyzacji z domowym Wi-Fi i aplikacją</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Jednostki ścienne, kasetonowe oraz kanałowe</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i> Estetyczne ukrycie przewodów w bruzdach lub korytkach</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="gallery">
-          <img src="assets/foto-2.jpeg" alt="Materiały firmowe Nowoczesna Klimatyzacja" />
-          <img src="assets/foto-4.jpeg" alt="Oklejenie samochodu Nowoczesna Klimatyzacja" />
-          <img src="assets/foto-3.jpeg" alt="Tył samochodu Nowoczesna Klimatyzacja" />
-        </div>
-      </div>
     </section>
 
-    <section id="kontakt">
-      <div class="wrap">
-        <div class="contact">
-          <div>
-            <h2>Potrzebujesz klimatyzacji?</h2>
-            <p>Zadzwoń i powiedz, gdzie ma być zamontowane urządzenie. Ustalimy szczegóły, doradzimy rozwiązanie i przygotujemy wycenę.</p>
-          </div>
-          <a class="phone" href="tel:+48606713838">606 713 838</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    <!-- INTERACTIVE ESTIMATION CALCULATOR -->
+    <section id="kalkulator" class="py-20 bg-brand-ice/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-left">
+            <div class="text-center space-y-3">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-brand-accent">Szybka Wycena Online</span>
+                <h2 class="font-montserrat font-black text-3xl sm:text-4xl text-brand-dark">Kalkulator Wyceny Montażu</h2>
+                <p class="text-slate-500">Wybierz podstawowe parametry instalacji, aby otrzymać natychmiastową, szacunkową wycenę.</p>
+            </div>
 
-  <footer>
-    <div class="wrap">
-      © Nowoczesna Klimatyzacja — Tomasz Chrośniak. Montaż • Serwis • Domowe systemy.
-      <a href="http://www.freehomedesign.pl" target="_blank" rel="noopener">Projekt i realizacja: FREE HOME design Studio</a>
+            <!-- Main calculator body -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-slate-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Configurator Fields -->
+                    <div class="space-y-6">
+                        <!-- Step 1: Area -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-bold text-brand-dark flex justify-between">
+                                <span>1. Metraż pomieszczenia (m²):</span>
+                                <span id="val-area" class="text-brand-accent font-mono">25 m²</span>
+                            </label>
+                            <input type="range" id="calc-area" min="10" max="100" value="25" oninput="calculatePrice()" class="w-full accent-brand-accent bg-slate-100 h-2 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-xs text-slate-400">
+                                <span>10 m²</span>
+                                <span>Zalecana moc: <strong id="calc-recom-power" class="text-brand-dark">~2.5 kW</strong></span>
+                                <span>100 m²</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Device class -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-bold text-brand-dark">2. Wybierz klasę / markę klimatyzatora:</label>
+                            <div class="grid grid-cols-1 gap-3">
+                                <label class="border-2 border-brand-accent/30 bg-brand-ice/30 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all" id="label-class-eco">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="calc-class" value="eco" checked onclick="calculatePrice()" class="accent-brand-accent">
+                                        <div>
+                                            <div class="font-bold text-sm text-brand-dark">Klasa Ekonomiczna</div>
+                                            <div class="text-xs text-slate-500">Dobre i sprawdzone urządzenia (np. Aux, Kaisai)</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-brand-accent">Baza</span>
+                                </label>
+                                
+                                <label class="border border-slate-200 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all" id="label-class-mid">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="calc-class" value="mid" onclick="calculatePrice()" class="accent-brand-accent">
+                                        <div>
+                                            <div class="font-bold text-sm text-brand-dark">Klasa Premium</div>
+                                            <div class="text-xs text-slate-500">Cichsze i energooszczędne (np. Gree, Cooper&Hunter)</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-500">+1 000 zł</span>
+                                </label>
+
+                                <label class="border border-slate-200 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all" id="label-class-top">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="calc-class" value="top" onclick="calculatePrice()" class="accent-brand-accent">
+                                        <div>
+                                            <div class="font-bold text-sm text-brand-dark">Klasa Top (Japońska)</div>
+                                            <div class="text-xs text-slate-500">Luksusowy design, bezgłośne, najlepsze filtry (np. Daikin, Mitsubishi)</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-500">+2 500 zł</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Additional features -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-bold text-brand-dark">3. Opcje dodatkowe:</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 p-2 border border-slate-100 rounded-lg cursor-pointer hover:bg-brand-ice/50">
+                                    <input type="checkbox" id="calc-wifi" onclick="calculatePrice()" class="w-4 h-4 accent-brand-accent rounded">
+                                    <span class="text-sm text-slate-600">Zdalne sterowanie Wi-Fi (Smart Home)</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-2 border border-slate-100 rounded-lg cursor-pointer hover:bg-brand-ice/50">
+                                    <input type="checkbox" id="calc-heater" onclick="calculatePrice()" class="w-4 h-4 accent-brand-accent rounded">
+                                    <span class="text-sm text-slate-600">Dodatkowe ogrzewanie (praca w temperaturach do -25°C)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Live Price / Summary Box -->
+                    <div class="bg-brand-dark text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-inner text-left">
+                        <div class="space-y-4">
+                            <h4 class="font-montserrat font-bold text-lg text-brand-light border-b border-white/10 pb-3">Podsumowanie kalkulacji</h4>
+                            
+                            <div class="space-y-2 text-sm text-slate-300">
+                                <div class="flex justify-between">
+                                    <span>Zalecana wydajność klimatyzatora:</span>
+                                    <span id="summary-power" class="font-bold text-white">2.5 kW</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Szacowany czas montażu:</span>
+                                    <span class="font-bold text-white">~4-6 godzin</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Standardowa długość instalacji:</span>
+                                    <span class="font-bold text-white">Do 3m w cenie podstawowej</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/10 mt-6 space-y-4">
+                            <div class="text-xs text-slate-400">Przewidywany koszt urządzenia wraz z montażem:</div>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-black font-montserrat text-brand-accent" id="summary-price">3 490 zł</span>
+                                <span class="text-xs text-slate-400 font-bold">brutto*</span>
+                            </div>
+                            <p class="text-[10px] text-slate-400 leading-tight">
+                                *Podana cena ma charakter orientacyjny (zawiera 8% VAT dla osób fizycznych). Ostateczna cena zależy od stopnia skomplikowania instalacji i odległości jednostek.
+                            </p>
+
+                            <!-- Mini contact form for calculation -->
+                            <button onclick="openCalcContactModal()" class="w-full bg-brand-accent hover:bg-cyan-400 text-brand-dark p-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all mt-4 shadow-lg shadow-brand-accent/20">
+                                <i class="fa-solid fa-calculator"></i> Przenieś wycenę do formularza
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-sm font-extrabold uppercase tracking-widest text-brand-accent">Przydatne informacje</span>
+                <h2 class="font-montserrat font-black text-3xl sm:text-4xl text-brand-dark">Najczęściej zadawane pytania (FAQ)</h2>
+                <p class="text-slate-500">Dowiedz się więcej o procesie zakupu, montażu i konserwacji klimatyzacji.</p>
+            </div>
+
+            <div class="space-y-4 text-left">
+                <!-- FAQ 1 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button class="w-full text-left p-6 font-bold text-brand-dark flex justify-between items-center bg-brand-ice/20 focus:outline-none" onclick="toggleFaq(1)">
+                        <span>Jak długo trwa montaż klimatyzacji w mieszkaniu?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-1" class="hidden p-6 text-sm text-slate-600 border-t border-slate-100 bg-white leading-relaxed">
+                        W większości przypadków, standardowy montaż klimatyzacji typu Split w mieszkaniu lub domu jednorodzinnym trwa od <strong>4 do 6 godzin</strong>. Czas ten może ulec wydłużeniu w przypadku konieczności wykonania długiej instalacji odprowadzenia skroplin lub montażu agregatu w trudno dostępnym miejscu.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button class="w-full text-left p-6 font-bold text-brand-dark flex justify-between items-center bg-brand-ice/20 focus:outline-none" onclick="toggleFaq(2)">
+                        <span>Czy klimatyzacja może służyć do ogrzewania domu zimą?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-2" class="hidden p-6 text-sm text-slate-600 border-t border-slate-100 bg-white leading-relaxed">
+                        <strong>Tak, jak najbardziej!</strong> Współczesne klimatyzatory to de facto pompy ciepła typu powietrze-powietrze. Są one niezwykle wydajne i energooszczędne również w trybie grzania. Większość oferowanych przez nas urządzeń potrafi skutecznie i tanio ogrzewać pomieszczenia even przy temperaturach zewnętrznych spadających do -15°C lub even -25°C.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button class="w-full text-left p-6 font-bold text-brand-dark flex justify-between items-center bg-brand-ice/20 focus:outline-none" onclick="toggleFaq(3)">
+                        <span>Jak często należy wykonywać przeglądy serwisowe klimatyzatora?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-3" class="hidden p-6 text-sm text-slate-600 border-t border-slate-100 bg-white leading-relaxed">
+                        Dla zachowania pełnej gwarancji producenta oraz zapewnienia najwyższego standardu czystości i bezpieczeństwa zdrowotnego, zalecamy wykonywanie serwisu <strong>2 razy w roku</strong> – na wiosnę (przed sezonem chłodniczym) oraz jesienią (po intensywnym sezonie chłodniczym lub przed rozpoczęciem dogrzewania).
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button class="w-full text-left p-6 font-bold text-brand-dark flex justify-between items-center bg-brand-ice/20 focus:outline-none" onclick="toggleFaq(4)">
+                        <span>Jaka stawka VAT obowiązuje przy montażu klimatyzacji?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-content-4" class="hidden p-6 text-sm text-slate-600 border-t border-slate-100 bg-white leading-relaxed">
+                        Dla osób prywatnych (osób fizycznych), które zamawiają montaż klimatyzacji w budynku mieszkalnym o powierzchni użytkowej do 150m² (mieszkanie) lub 300m² (dom jednorodzinny), obowiązuje obniżona stawka podatku <strong>8% VAT</strong> na całą usługę wraz z urządzeniem. Dla firm i biur obowiązuje standardowa stawka <strong>23% VAT</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="kontakt" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <radialGradient id="grad-cont" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#38bdf8"/>
+                    <stop offset="100%" stop-color="#0b2545"/>
+                </radialGradient>
+                <rect width="100%" height="100%" fill="url(#grad-cont)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact info (left) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-sm font-extrabold uppercase tracking-widest text-brand-accent">Szybki kontakt</span>
+                    <h2 class="font-montserrat font-black text-3xl sm:text-4xl text-white">Porozmawiajmy o Twojej klimatyzacji</h2>
+                    <p class="text-slate-300">
+                        Chętnie odpowiem na wszystkie Twoje pytania. Pomogę dobrać odpowiednie urządzenie i umówię dogodny termin bezpłatnej wizji lokalnej.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4">
+                            <button onclick="handlePhoneClick('606713838', event)" class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-xl text-brand-accent hover:bg-white/20 transition-all" aria-label="Zadzwoń do nas">
+                                <i class="fa-solid fa-phone"></i>
+                            </button>
+                            <div class="text-left">
+                                <div class="text-xs text-slate-400 uppercase">Zadzwoń bezpośrednio:</div>
+                                <button onclick="handlePhoneClick('606713838', event)" class="font-montserrat font-bold text-lg hover:text-brand-accent transition-colors block text-left">606 713 838</button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-xl text-brand-accent">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-xs text-slate-400 uppercase">Właściciel / Specjalista:</div>
+                                <div class="font-montserrat font-bold text-lg">Tomasz Chrośniak</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-xl text-brand-accent">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-xs text-slate-400 uppercase">Obszar działania:</div>
+                                <div class="font-bold text-slate-200">Głogów, Dolny Śląsk i okolice (do 80 km)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Workhours badge -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 flex gap-3 items-center">
+                        <i class="fa-solid fa-circle-info text-brand-accent text-lg"></i>
+                        <span class="text-xs text-slate-300">Pracujemy od poniedziałku do soboty w godzinach 8:00 - 18:00. Na zgłoszenia alarmowe odpowiadamy błyskawicznie.</span>
+                    </div>
+                </div>
+
+                <!-- Contact Form (right) -->
+                <div class="lg:col-span-7 bg-white text-slate-800 p-6 sm:p-10 rounded-3xl shadow-2xl">
+                    <h3 class="font-montserrat font-bold text-2xl text-brand-dark mb-2">Napisz do nas</h3>
+                    <p class="text-sm text-slate-500 mb-6">Wypełnij prosty formularz, a skontaktujemy się z Tobą w ciągu 2 godzin.</p>
+
+                    <!-- FormSubmit integration -->
+                    <form id="main-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-left">
+                        <input type="hidden" name="_subject" value="Zgłoszenie - Nowoczesna Klimatyzacja">
+                        <input type="hidden" name="_honey" style="display:none"> <!-- Anti-Spam protection -->
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-slate-600 uppercase block">Imię i nazwisko:</label>
+                                <input type="text" name="name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:border-brand-accent focus:outline-none transition-all">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-slate-600 uppercase block">Numer telefonu:</label>
+                                <input type="tel" name="phone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:border-brand-accent focus:outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-slate-600 uppercase block">Wybierz interesującą Cię usługę:</label>
+                            <select name="service" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:border-brand-accent focus:outline-none transition-all">
+                                <option>Montaż nowego klimatyzatora</option>
+                                <option>Okresowy serwis i czyszczenie</option>
+                                <option>Diagnostyka i naprawa awarii</option>
+                                <option>Inna sprawa</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-slate-600 uppercase block">Wiadomość (np. metraż mieszkania, miejscowość):</label>
+                            <textarea id="form-msg" name="message" rows="4" required class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm focus:border-brand-accent focus:outline-none transition-all resize-none"></textarea>
+                        </div>
+
+                        <button id="form-submit-btn" type="submit" class="w-full bg-brand-dark hover:bg-brand-blue text-white p-4 rounded-xl font-bold transition-all transform hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2">
+                            <i id="btn-submit-icon" class="fa-solid fa-paper-plane text-brand-accent"></i>
+                            <span id="btn-submit-text">Wyślij darmowe zapytanie</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#051329] text-slate-400 py-12 border-t border-white/5 text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <div class="flex flex-col">
+                    <span class="font-montserrat font-black text-xl text-white tracking-tight leading-none">NOWOCZESNA</span>
+                    <span class="font-montserrat font-bold text-[10px] tracking-[0.27em] text-brand-accent leading-none mt-1">KLIMATYZACJA</span>
+                </div>
+                <p class="text-xs leading-relaxed">
+                    Szybki, bezpieczny i czysty montaż nowoczesnych systemów chłodzenia w Twoim domu. Zapraszamy do darmowej wyceny na terenie Głogowa i okolic.
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Szybkie linki</h5>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#o-nas" class="hover:text-brand-accent transition-colors">O nas</a></li>
+                    <li><a href="#uslugi" class="hover:text-brand-accent transition-colors">Oferta i Usługi</a></li>
+                    <li><a href="#symulator" class="hover:text-brand-accent transition-colors">Wirtualny Klimatyzator</a></li>
+                    <li><a href="#kalkulator" class="hover:text-brand-accent transition-colors">Kalkulator wyceny</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Usługi</h5>
+                <ul class="space-y-2 text-xs">
+                    <li>Montaż klimatyzacji Split</li>
+                    <li>Montaż systemów Multi-split</li>
+                    <li>Dezynfekcja, ozonowanie i odgrzybianie</li>
+                    <li>Uzupełnianie czynnika chłodniczego</li>
+                    <li>Serwis gwarancyjny i pogwarancyjny</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="text-white font-bold text-sm mb-4">Kontakt bezpośredni</h5>
+                <p class="text-xs text-slate-300">
+                    <strong>Tomasz Chrośniak</strong><br>
+                    Telefon: <button onclick="handlePhoneClick('606713838', event)" class="text-brand-accent font-bold hover:underline">606 713 838</button>
+                </p>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="handlePhoneClick('606713838', event)" class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-accent hover:text-brand-dark flex items-center justify-center text-slate-300 transition-all text-sm" aria-label="Zadzwoń bezpośrednio">
+                        <i class="fa-solid fa-phone"></i>
+                    </button>
+                    <a href="#kontakt" class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-accent hover:text-brand-dark flex items-center justify-center text-slate-300 transition-all text-sm">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-xs">
+            <p>&copy; 2026 Nowoczesna Klimatyzacja - Tomasz Chrośniak. Wszelkie prawa zastrzeżone.</p>
+            <p class="mt-2 sm:mt-0"><a href="http://www.freehomedesign.pl" target="_blank" rel="noopener" class="text-brand-accent font-semibold hover:text-white transition-colors">Projekt i realizacja: FREE HOME design Studio</a></p>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL POPUP -->
+    <div id="success-modal" class="hidden fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-slate-100 shadow-2xl text-center space-y-4 transform transition-all">
+            <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto animate-bounce">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h4 class="font-montserrat font-bold text-2xl text-brand-dark">Wiadomość wysłana!</h4>
+            <p class="text-sm text-slate-500 text-center">Dziękujemy za kontakt. Tomasz Chrośniak skontaktuje się z Tobą telefonicznie w możliwie najkrótszym czasie, zazwyczaj w ciągu 2 godzin.</p>
+            <button onclick="closeSuccessModal()" class="w-full bg-brand-dark text-white p-3.5 rounded-xl font-bold hover:bg-brand-blue transition-colors">
+                Zamknij okno
+            </button>
+        </div>
     </div>
-  </footer>
+
+    <!-- JAVASCRIPT FOR DYNAMIC LOGIC AND AC SIMULATOR -->
+    <script>
+        // --- SMART PHONE LINK COPING & CALLING ---
+        function handlePhoneClick(phoneNum, event) {
+            // Check if user is on a mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // If on mobile, trigger the normal phone system link
+                window.location.href = "tel:" + phoneNum;
+            } else {
+                // If on desktop, copy the number to clipboard and show a toast
+                copyToClipboard(phoneNum);
+                showToast("606 713 838", "Skopiowano numer! Możesz go teraz łatwo wkleić.");
+            }
+        }
+
+        // Cross-platform copy to clipboard function
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+        }
+
+        // Toast show logic
+        function showToast(titleText, msgText) {
+            const toast = document.getElementById("toast");
+            const toastMsg = document.getElementById("toast-msg");
+            
+            toastMsg.innerText = msgText;
+            
+            // Slide in & Fade in
+            toast.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+            toast.classList.add("translate-y-0", "opacity-100");
+
+            // Auto slide out after 4 seconds
+            setTimeout(() => {
+                toast.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+                toast.classList.remove("translate-y-0", "opacity-100");
+            }, 4000);
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion logic
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if(content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // --- AC SIMULATOR LOGIC ---
+        let acOn = false;
+        let currentMode = 'cool'; // 'cool' or 'heat'
+        let currentTemp = 21;
+
+        function toggleAC() {
+            acOn = !acOn;
+            
+            const led = document.getElementById('ac-led');
+            const statusText = document.getElementById('status-text');
+            const breezeWaves = document.getElementById('breeze-waves');
+            const powerBtn = document.getElementById('btn-power');
+            const powerText = document.getElementById('power-text');
+            
+            // Enable/Disable controls
+            const btnCool = document.getElementById('btn-cool');
+            const btnHeat = document.getElementById('btn-heat');
+            const btnDown = document.getElementById('btn-temp-down');
+            const btnUp = document.getElementById('btn-temp-up');
+            const slider = document.getElementById('temp-slider');
+
+            if(acOn) {
+                // Turn ON
+                led.classList.remove('bg-green-500');
+                led.classList.add('bg-cyan-400');
+                statusText.innerText = "Klimatyzator działa prawidłowo. Trwa chłodzenie...";
+                breezeWaves.classList.remove('hidden');
+                powerBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+                powerBtn.classList.add('bg-slate-700', 'hover:bg-slate-800');
+                powerText.innerText = "Wyłącz urządzenie";
+                
+                // Enable interactivity
+                btnCool.removeAttribute('disabled');
+                btnCool.classList.remove('opacity-50', 'cursor-not-allowed');
+                btnHeat.removeAttribute('disabled');
+                btnHeat.classList.remove('opacity-50', 'cursor-not-allowed');
+                btnDown.removeAttribute('disabled');
+                btnUp.removeAttribute('disabled');
+                slider.removeAttribute('disabled');
+                slider.classList.remove('cursor-not-allowed');
+                
+                setMode(currentMode);
+            } else {
+                // Turn OFF
+                led.classList.add('bg-green-500');
+                led.classList.remove('bg-cyan-400');
+                statusText.innerText = "Klimatyzator jest wyłączony.";
+                breezeWaves.classList.add('hidden');
+                powerBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+                powerBtn.classList.remove('bg-slate-700', 'hover:bg-slate-800');
+                powerText.innerText = "Włącz urządzenie";
+
+                // Disable interactivity
+                btnCool.setAttribute('disabled', 'true');
+                btnCool.classList.add('opacity-50', 'cursor-not-allowed');
+                btnHeat.setAttribute('disabled', 'true');
+                btnHeat.classList.add('opacity-50', 'cursor-not-allowed');
+                btnDown.setAttribute('disabled', 'true');
+                btnUp.setAttribute('disabled', 'true');
+                slider.setAttribute('disabled', 'true');
+                slider.classList.add('cursor-not-allowed');
+            }
+        }
+
+        function setMode(mode) {
+            if (!acOn) return;
+            currentMode = mode;
+            
+            const btnCool = document.getElementById('btn-cool');
+            const btnHeat = document.getElementById('btn-heat');
+            const screenModeIcon = document.getElementById('screen-mode-icon');
+            const breezeWaves = document.getElementById('breeze-waves');
+            const statusText = document.getElementById('status-text');
+
+            // Reset selection styling
+            btnCool.classList.remove('bg-cyan-500', 'text-white');
+            btnCool.classList.add('bg-cyan-500/20', 'text-cyan-300');
+            btnHeat.classList.remove('bg-orange-500', 'text-white');
+            btnHeat.classList.add('bg-orange-500/20', 'text-orange-300');
+
+            // Apply style to active mode button
+            if(mode === 'cool') {
+                btnCool.classList.add('bg-cyan-500', 'text-white');
+                screenModeIcon.innerHTML = '<i class="fa-solid fa-snowflake"></i>';
+                statusText.innerText = `Klimatyzator chłodzi powietrze do ${currentTemp}°C.`;
+                
+                // Set cool breeze colors
+                Array.from(breezeWaves.children).forEach(el => {
+                    el.classList.remove('bg-gradient-to-b', 'from-orange-500/40');
+                    el.classList.add('bg-gradient-to-b', 'from-brand-accent/40');
+                });
+            } else if(mode === 'heat') {
+                btnHeat.classList.add('bg-orange-500', 'text-white');
+                screenModeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                statusText.innerText = `Klimatyzator nagrzewa powietrze do ${currentTemp}°C.`;
+                
+                // Set warm breeze colors
+                Array.from(breezeWaves.children).forEach(el => {
+                    el.classList.remove('bg-gradient-to-b', 'from-brand-accent/40');
+                    el.classList.add('bg-gradient-to-b', 'from-orange-500/40');
+                });
+            }
+        }
+
+        // Method to adjust temp inside AC Unit
+        function adjustTemp(amount) {
+            if (!acOn) return;
+            let targetTemp = currentTemp + amount;
+            if(targetTemp >= 16 && targetTemp <= 30) {
+                updateTempSlider(targetTemp);
+            }
+        }
+
+        function updateTempSlider(value) {
+            currentTemp = parseInt(value);
+            document.getElementById('temp-slider').value = currentTemp;
+            document.getElementById('screen-temp').innerText = currentTemp;
+            
+            if(acOn) {
+                const statusText = document.getElementById('status-text');
+                if(currentMode === 'cool') {
+                    statusText.innerText = `Klimatyzator chłodzi powietrze do ${currentTemp}°C.`;
+                } else {
+                    statusText.innerText = `Klimatyzator nagrzewa powietrze do ${currentTemp}°C.`;
+                }
+            }
+        }
+
+
+        // --- PRICE CALCULATOR LOGIC ---
+        function calculatePrice() {
+            const area = parseInt(document.getElementById('calc-area').value);
+            document.getElementById('val-area').innerText = `${area} m²`;
+
+            // Calculate recommended AC Power
+            let power = 2.5;
+            if (area > 25) power = 3.5;
+            if (area > 35) power = 5.0;
+            if (area > 50) power = 7.0;
+            
+            document.getElementById('calc-recom-power').innerText = `~${power} kW`;
+            document.getElementById('summary-power').innerText = `${power} kW`;
+
+            // Base price based on power requirements
+            let basePrice = 3100;
+            if (power === 3.5) basePrice = 3600;
+            if (power === 5.0) basePrice = 4800;
+            if (power === 7.0) basePrice = 6400;
+
+            // Brand Premium Logic
+            const deviceClass = document.querySelector('input[name="calc-class"]:checked').value;
+            let brandAddon = 0;
+            
+            // Visual label updating
+            const labelEco = document.getElementById('label-class-eco');
+            const labelMid = document.getElementById('label-class-mid');
+            const labelTop = document.getElementById('label-class-top');
+
+            labelEco.className = "border border-slate-200 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+            labelMid.className = "border border-slate-200 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+            labelTop.className = "border border-slate-200 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+
+            if (deviceClass === 'eco') {
+                brandAddon = 0;
+                labelEco.className = "border-2 border-brand-accent/30 bg-brand-ice/30 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+            } else if (deviceClass === 'mid') {
+                brandAddon = 1000;
+                labelMid.className = "border-2 border-brand-accent/30 bg-brand-ice/30 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+            } else if (deviceClass === 'top') {
+                brandAddon = 2500;
+                labelTop.className = "border-2 border-brand-accent/30 bg-brand-ice/30 p-3 rounded-xl flex items-center justify-between cursor-pointer hover:bg-brand-ice transition-all";
+            }
+
+            // Options logic
+            let optionsAddon = 0;
+            if (document.getElementById('calc-wifi').checked) optionsAddon += 150;
+            if (document.getElementById('calc-heater').checked) optionsAddon += 450;
+
+            const finalPrice = basePrice + brandAddon + optionsAddon;
+            
+            // Render Price formatted
+            document.getElementById('summary-price').innerText = `${finalPrice.toLocaleString('pl-PL')} zł`;
+        }
+
+        // Open contact modal pre-filled with calculation data
+        function openCalcContactModal() {
+            const area = document.getElementById('calc-area').value;
+            const power = document.getElementById('summary-power').innerText;
+            const price = document.getElementById('summary-price').innerText;
+            const selectService = document.querySelector('#kontakt select');
+            const textarea = document.querySelector('#kontakt textarea');
+
+            // Force scroll to contact
+            document.getElementById('kontakt').scrollIntoView({ behavior: 'smooth' });
+
+            // Fill form with custom calculated state
+            selectService.value = "Montaż nowego klimatyzatora";
+            textarea.value = `Dzień dobry!\nInteresuje mnie montaż klimatyzacji według moich wyliczeń z kalkulatora:\n- Metraż: ${area} m²\n- Sugerowana moc: ${power}\n- Orientacyjna cena urządzenia z montażem: ${price}\n\nProszę o kontakt telefoniczny w celu bezpłatnej wyceny na miejscu.`;
+            textarea.focus();
+        }
+
+        // Real-Time Form Submission via FormSubmit.co using Fetch (AJAX)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const submitBtn = document.getElementById('form-submit-btn');
+            const submitText = document.getElementById('btn-submit-text');
+            const submitIcon = document.getElementById('btn-submit-icon');
+
+            // Przywrócony docelowy adres e-mail:
+            const targetEmail = "nowoczesnaklimatyzacja@gmail.com"; 
+
+            // Visual feedback - loading state
+            submitBtn.setAttribute('disabled', 'true');
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitText.innerText = "Wysyłanie zgłoszenia...";
+            submitIcon.className = "fa-solid fa-spinner animate-spin text-brand-accent";
+
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+
+            // FormSubmit Endpoint
+            const endpoint = `https://formsubmit.co/ajax/${targetEmail}`;
+
+            fetch(endpoint, {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if(response.ok) {
+                    // Success State
+                    document.getElementById('success-modal').classList.remove('hidden');
+                    form.reset();
+                } else {
+                    showToast("Błąd", "Wystąpił problem z wysłaniem wiadomości. Spróbuj zadzwonić bezpośrednio.");
+                }
+            })
+            .catch(error => {
+                showToast("Błąd połączenia", "Nie udało się nawiązać połączenia. Skopiowano numer, skontaktuj się telefonicznie.");
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.removeAttribute('disabled');
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                submitText.innerText = "Wyślij darmowe zapytanie";
+                submitIcon.className = "fa-solid fa-paper-plane text-brand-accent";
+            });
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Initialize calculator on page load
+        window.onload = function() {
+            calculatePrice();
+        }
+    </script>
 </body>
 </html>
